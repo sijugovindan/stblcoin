@@ -16,14 +16,23 @@ contract StableCoinPool is Ownable {
      
     mapping (address => uint256) public deposits;  // depositor address -> total deposits
      
-    function setAddresses(IdeaUSD _iusdToken, VaultManager _vaultManager) external onlyOwner {
+    function setAddresses(
+        IdeaUSD _iusdToken, 
+        VaultManager _vaultManager
+    ) 
+    external 
+    onlyOwner 
+    {
         iusdToken = _iusdToken;
         vaultManager = _vaultManager;
         
         renounceOwnership();
     }
     
-    function deposit(uint256 _amount) external {
+    function deposit(
+        uint256 _amount
+    ) external 
+    {
         deposits[msg.sender] = deposits[msg.sender] + _amount;
 
         // update IUSD Deposits
@@ -34,7 +43,12 @@ contract StableCoinPool is Ownable {
         iusdToken.transferFrom(msg.sender, address(this), _amount);
     }
     
-    function offset(uint256 _IUSDAmount) external onlyVaultManager {
+    function offset(
+        uint256 _IUSDAmount
+    ) 
+    external 
+    onlyVaultManager 
+    {
         // decrease debt in active pool 
         totalIUSDDeposits = totalIUSDDeposits - _IUSDAmount;
         
@@ -43,21 +57,37 @@ contract StableCoinPool is Ownable {
     }
     
     // Getters
-    function getReserveDeposited() external view returns (uint) {
+    function getReserveDeposited() 
+    external 
+    view 
+    returns (uint) 
+    {
         return totalReserveDeposited;
     }
     
-    function getTotalIUSDDeposits() external view returns(uint256){
+    function getTotalIUSDDeposits() 
+    external 
+    view 
+    returns(uint256)
+    {
         return totalIUSDDeposits;
     }
     
-    modifier onlyVaultManager {
-        require(msg.sender == address(vaultManager), "StableCoinPool: Sender is not VaultManager");
+    modifier onlyVaultManager 
+    {
+        require(
+            msg.sender == address(vaultManager), 
+            "StableCoinPool: Sender is not VaultManager"
+        );
         _;
     }
     
     // Fallback
-    receive() external payable onlyVaultManager {
+    receive() 
+    external 
+    payable 
+    onlyVaultManager 
+    {
         totalReserveDeposited = totalReserveDeposited + msg.value;
     }
 }

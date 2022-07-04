@@ -52,7 +52,17 @@ contract VaultManager is Base, Ownable {
 
     mapping (address => Vault) public vaults;
 
-    function setAddresses(PriceFeed _priceFeed, IdeaUSD _IUSDToken, StableCoinPool _stableCoinPool, GasPool _gasPool, StakingPool _stakingPool, ReservePool _reservePool) external onlyOwner {
+    function setAddresses(
+        PriceFeed _priceFeed, 
+        IdeaUSD _IUSDToken, 
+        StableCoinPool _stableCoinPool, 
+        GasPool _gasPool, 
+        StakingPool _stakingPool, 
+        ReservePool _reservePool
+    ) 
+    external 
+    onlyOwner 
+    {
             
         primaryMarket = PrimaryMarket(msg.sender);
         priceFeed = _priceFeed;
@@ -68,7 +78,10 @@ contract VaultManager is Base, Ownable {
         renounceOwnership();
     }
     
-    function liquidate(address _borrower) external {
+    function liquidate(
+        address _borrower
+    ) external 
+    {
         uint256 price = priceFeed.getPrice();
         console.log("Price %s", price);
         
@@ -109,7 +122,10 @@ contract VaultManager is Base, Ownable {
         reservePool.sendReserve(msg.sender, collateralCompensation);
     }
     
-    function redemption(uint256 _amountToRedeem) external {
+    function redemption(
+        uint256 _amountToRedeem
+    ) external 
+    {
         require(iusdToken.balanceOf(msg.sender) >= _amountToRedeem, "VaultManager: Requested redemption amount must be <= user's IUSD token balance");
         
         uint256 price = priceFeed.getPrice();
@@ -174,7 +190,14 @@ contract VaultManager is Base, Ownable {
         reservePool.sendReserve(msg.sender, reserveToSendToRedeemer);
     }
     
-    function _updateBaseRateFromRedemption(uint _ReserveDrawn,  uint _price, uint _totalIUSDSupply) internal returns (uint) {
+    function _updateBaseRateFromRedemption(
+        uint _ReserveDrawn,  
+        uint _price, 
+        uint _totalIUSDSupply
+    ) 
+    internal 
+    returns (uint) 
+    {
         uint decayedBaseRate = _calcDecayedBaseRate();
 
         /* Convert the drawn Reserve back to IUSD at face value rate (1 IUSD:1 USD), in order to get
@@ -191,21 +214,44 @@ contract VaultManager is Base, Ownable {
         return newBaseRate;
     }
     
-    function _getRedemptionFee(uint _ReserveDrawn) internal view returns (uint) {
+    function _getRedemptionFee(
+        uint _ReserveDrawn
+    ) 
+    internal 
+    view 
+    returns (uint) 
+    {
         return _calcRedemptionFee(getRedemptionRate(), _ReserveDrawn);
     }
     
-    function _calcRedemptionFee(uint _redemptionRate, uint _ReserveDrawn) internal pure returns (uint) {
+    function _calcRedemptionFee(
+        uint _redemptionRate, 
+        uint _ReserveDrawn
+    ) 
+    internal 
+    pure 
+    returns (uint) 
+    {
         uint redemptionFee = _redemptionRate * _ReserveDrawn / DECIMAL_PRECISION;
         require(redemptionFee < _ReserveDrawn, "TroveManager: Fee would eat up all returned collateral");
         return redemptionFee;
     }
     
-    function getRedemptionRate() public view returns (uint) {
+    function getRedemptionRate() 
+    public 
+    view 
+    returns (uint) 
+    {
         return _calcRedemptionRate(baseRate);
     }
     
-    function _calcRedemptionRate(uint _baseRate) internal pure returns (uint) {
+    function _calcRedemptionRate(
+        uint _baseRate
+    ) 
+    internal 
+    pure 
+    returns (uint) 
+    {
         return StableCoinMath._min(
             REDEMPTION_FEE_FLOOR + _baseRate,
             DECIMAL_PRECISION // cap at a maximum of 100%
@@ -213,14 +259,26 @@ contract VaultManager is Base, Ownable {
     }
     
     // Return the nominal collateral ratio (ICR) of a given Trove, without the price. Takes a trove's pending coll and debt rewards from redistributions into account.
-    function getNominalICR(address _borrower) public view returns (uint) {
+    function getNominalICR(
+        address _borrower
+    ) 
+    public 
+    view 
+    returns (uint) 
+    {
         (uint currentReserve, uint currentIUSDDebt) = _getCurrentTroveAmounts(_borrower);
 
         uint NICR = _computeNominalCR(currentReserve, currentIUSDDebt);
         return NICR;
     }
     
-    function _computeNominalCR(uint _coll, uint _debt) internal pure returns (uint) {
+    function _computeNominalCR(
+        uint _coll, uint _debt
+    ) 
+    internal 
+    pure 
+    returns (uint) 
+    {
         if (_debt > 0) {
             return _coll * NICR_PRECISION / _debt;
         }
@@ -230,7 +288,13 @@ contract VaultManager is Base, Ownable {
         }
     }
     
-    function _getCurrentTroveAmounts(address _borrower) internal view returns (uint, uint) {
+    function _getCurrentTroveAmounts(
+        address _borrower
+    ) 
+    internal 
+    view 
+    returns (uint, uint) 
+    {
         uint currentReserve = vaults[_borrower].collateral;
         uint currentIUSDDebt = vaults[_borrower].debt;
 
@@ -238,7 +302,9 @@ contract VaultManager is Base, Ownable {
     }
     
     // Updates the baseRate state variable based on time elapsed since the last redemption or IUSD PrimaryMarket operation.
-    function decayBaseRateFromBorrowing()  external {  
+    function decayBaseRateFromBorrowing()  
+    external 
+    {  
         // external onlyPrimaryMarketContract {
         uint decayedBaseRate = _calcDecayedBaseRate();
         assert(decayedBaseRate <= DECIMAL_PRECISION);  // The baseRate can decay to 0
@@ -248,7 +314,11 @@ contract VaultManager is Base, Ownable {
         _updateLastFeeOpTime();
     }
     
-    function _calcDecayedBaseRate() internal view returns (uint) {
+    function _calcDecayedBaseRate() 
+    internal 
+    view 
+    returns (uint) 
+    {
         uint minutesPassed = _minutesPassedSinceLastFeeOp();
         console.log("MinutesPassed %s", minutesPassed);
         
@@ -257,7 +327,9 @@ contract VaultManager is Base, Ownable {
         return baseRate * decayFactor / DECIMAL_PRECISION;
     }
     
-    function _updateLastFeeOpTime() internal {
+    function _updateLastFeeOpTime() 
+    internal 
+    {
         uint timePassed = block.timestamp - lastFeeOperationTime;
 
         if (timePassed >= SECONDS_IN_ONE_MINUTE) {
@@ -265,35 +337,74 @@ contract VaultManager is Base, Ownable {
         }
     }
     
-    function getBorrowingFee(uint _IUSDDebt) external view returns (uint) {
+    function getBorrowingFee(
+        uint _IUSDDebt
+    ) 
+    external 
+    view 
+    returns (uint) 
+    {
         return _calcBorrowingFee(getBorrowingRate(), _IUSDDebt);
     }
     
-    function _calcBorrowingFee(uint _borrowingRate, uint _IUSDDebt) internal pure returns (uint) {
+    function _calcBorrowingFee(
+        uint _borrowingRate, 
+        uint _IUSDDebt
+    ) 
+    internal 
+    pure 
+    returns (uint) 
+    {
         return _borrowingRate * _IUSDDebt / DECIMAL_PRECISION;
     }
     
-    function getBorrowingRate() public view returns (uint) {
+    function getBorrowingRate() 
+    public 
+    view 
+    returns (uint) 
+    {
         return _calcBorrowingRate(baseRate);
     }
 
-    function _calcBorrowingRate(uint _baseRate) internal pure returns (uint) {
+    function _calcBorrowingRate(
+        uint _baseRate
+    ) 
+    internal 
+    pure 
+    returns (uint) 
+    {
         return StableCoinMath._min(
             BORROWING_FEE_FLOOR + _baseRate,
             MAX_BORROWING_FEE
         );
     }
     
-    function _minutesPassedSinceLastFeeOp() internal view returns (uint) {
+    function _minutesPassedSinceLastFeeOp() 
+    internal 
+    view 
+    returns (uint) 
+    {
         return block.timestamp - lastFeeOperationTime / SECONDS_IN_ONE_MINUTE;
     } 
     
     // --- Vault property getters ---
-    function getVaultDebt(address _borrower) external view returns (uint) {
+    function getVaultDebt(
+        address _borrower
+    ) 
+    external 
+    view 
+    returns (uint) 
+    {
         return vaults[_borrower].debt;
     }
 
-    function getVaultCollateral(address _borrower) external view returns (uint) {
+    function getVaultCollateral(
+        address _borrower
+    ) 
+    external 
+    view 
+    returns (uint) 
+    {
         return vaults[_borrower].collateral;
     }
 
@@ -314,11 +425,20 @@ contract VaultManager is Base, Ownable {
         sortedVaults.insert(_borrower, getNominalICR(_borrower));
     }
     
-    function closeVault(address _borrower) external onlyPrimaryMarketContract {
+    function closeVault(
+        address _borrower
+    ) 
+    external 
+    onlyPrimaryMarketContract 
+    {
         _closeVault(_borrower, Status.closedByOwner);    
     }
     
-    function _closeVault(address _borrower, Status closedStatus) internal {
+    function _closeVault(
+        address _borrower, 
+        Status closedStatus
+    ) internal 
+    {
         vaults[_borrower].status = closedStatus;
         vaults[_borrower].collateral = 0;
         vaults[_borrower].debt = 0;
@@ -327,7 +447,10 @@ contract VaultManager is Base, Ownable {
     }
     
     modifier onlyPrimaryMarketContract {
-        require(msg.sender == address(primaryMarket), "VaultManager: Caller is not the Borrowing contract");
+        require(
+            msg.sender == address(primaryMarket), 
+            "VaultManager: Caller is not the Borrowing contract"
+        );
         _;
     }
 }

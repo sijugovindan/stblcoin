@@ -19,22 +19,42 @@ contract IdeaUSD is ERC20 {
         stabilityPoolAddress = _stabilityPoolAddress;
     }
     
-    function mint(address _account, uint256 _amount) external onlyPrimaryMarket{
+    function mint(
+        address _account, 
+        uint256 _amount
+    ) 
+    external 
+    onlyPrimaryMarket
+    {
         _mint(_account, _amount);
     }
     
     
-    function burn(address _account, uint256 _amount) external onlyPrimaryMarketOrVaultManagerOrStabilityPool{
+    function burn(
+        address _account, 
+        uint256 _amount
+    ) 
+    external 
+    onlyPrimaryMarketOrVaultManagerOrStabilityPool
+    {
         _burn(_account, _amount);
     }
     
     modifier onlyPrimaryMarketOrVaultManagerOrStabilityPool {
-        require(msg.sender == primaryMarket || msg.sender == vaultManagerAddress || msg.sender == stabilityPoolAddress, "Invalid minter");
+        require(
+            msg.sender == primaryMarket || 
+            msg.sender == vaultManagerAddress || 
+            msg.sender == stabilityPoolAddress, 
+            "Invalid minter"
+        );
         _;
     }
     
     modifier onlyPrimaryMarket {
-        require(msg.sender == primaryMarket, "Invalid minter");
+        require(
+            msg.sender == primaryMarket, 
+            "Invalid minter"
+        );
         _;
     }
     

@@ -16,6 +16,7 @@ import "./markets/internal/pools/StakingPool.sol";
 //import "hardhat/console.sol";
 
 contract PrimaryMarket is Base, Ownable{
+
     PriceFeed public priceFeed;
     VaultManager public vaultManager;
     IdeaUSD public iusdToken;
@@ -26,7 +27,8 @@ contract PrimaryMarket is Base, Ownable{
     GasPool public gasPool;
     StakingPool public stakingPool;
     
-    constructor(){
+    constructor()
+    {
         
         priceFeed = new PriceFeed();
         priceFeed.setPrice(1000 * 10**18);
@@ -50,20 +52,28 @@ contract PrimaryMarket is Base, Ownable{
         vaultManager.setAddresses(priceFeed, iusdToken, stableCoinPool, gasPool, stakingPool, reservePool);
     }
     
-    function mint(uint256 _IUSDAmount) public payable {
+    function mint(uint256 _IUSDAmount) 
+    public payable 
+    {
        _borrow(_IUSDAmount);
     }
     
-    function repay() external {
+    function repay() 
+    external 
+    {
         _repay();
+    }
+
+    function redeem() 
+    external 
+    {
        
     }
 
-    function redeem() external {
-       
-    }
-
-    function _borrow(uint256 _IUSDAmount) internal {
+    function _borrow(
+        uint256 _IUSDAmount
+    ) internal 
+    {
         uint256 IUSDAmount = _IUSDAmount * DECIMAL_PRECISION;
         uint256 debt = IUSDAmount;
         
@@ -98,27 +108,44 @@ contract PrimaryMarket is Base, Ownable{
         
         // send reserve/BNB to ReservePool
         _addCollateralToReservePool(msg.value);
-        console.log("ReservePool Collateral Deposited %s", reservePool.getReserveDeposited());
+        console.log(
+            "ReservePool Collateral Deposited %s", 
+            reservePool.getReserveDeposited()
+        );
         
         // mint tokens for user
         iusdToken.mint(msg.sender, IUSDAmount);
-        console.log("Balance of borrower %s", iusdToken.balanceOf(msg.sender));
+        console.log(
+            "Balance of borrower %s", 
+            iusdToken.balanceOf(msg.sender)
+        );
         
         // mint tokens for gas compensations
         iusdToken.mint(address(gasPool), IUSD_GAS_COMPENSATION);
-        console.log("gas compensations %s", iusdToken.balanceOf(address(gasPool)));
+        console.log(
+            "gas compensations %s", 
+            iusdToken.balanceOf(address(gasPool))
+        );
         
         // increase IUSD Debt 
         reservePool.increaseIUSDDebt(compositeDebt);
-        console.log("ReservePool IUSD Debt %s", reservePool.getIUSDDebt());
+        console.log(
+            "ReservePool IUSD Debt %s", 
+            reservePool.getIUSDDebt()
+        );
     }
     
-    function _repay() internal {
+    function _repay() 
+    internal 
+    {
         uint256 collateral = vaultManager.getVaultCollateral(msg.sender);
         uint256 debt = vaultManager.getVaultDebt(msg.sender);
         
         uint256 debtRepayment = debt - IUSD_GAS_COMPENSATION;
-        require(iusdToken.balanceOf(msg.sender) >= debtRepayment, "Borrower doesnt have enough IUSD to make repayment");
+        require(
+            iusdToken.balanceOf(msg.sender) >= debtRepayment, 
+            "Borrower doesnt have enough IUSD to make repayment"
+        );
 
         vaultManager.closeVault(msg.sender);
         
@@ -134,16 +161,25 @@ contract PrimaryMarket is Base, Ownable{
         reservePool.sendReserve(msg.sender, collateral);
     }
     
-    function _requireCollateralRatioIsAboveMCR(uint256 _collateralRatio) internal pure {
-        require(_collateralRatio >= MINIMUN_COLLATERAL_RATIO, "Collateral Ratio Below MINIMUN_COLLATERAL_RATIO");
+    function _requireCollateralRatioIsAboveMCR(
+        uint256 _collateralRatio
+    ) internal pure 
+    {
+        require(
+            _collateralRatio >= MINIMUN_COLLATERAL_RATIO, 
+            "Collateral Ratio Below MINIMUN_COLLATERAL_RATIO"
+        );
     }
     
-    function _addCollateralToReservePool(uint _amount) internal {
+    function _addCollateralToReservePool(
+        uint _amount
+    ) internal 
+    {
         (bool success, ) = address(reservePool).call{value: _amount}("");
-        require(success, "Borrowing: Sending Reserve to ReservePool failed");
+        require(
+            success, 
+            "Borrowing: Sending Reserve to ReservePool failed"
+        );
     }
-
-
-    
 
 }

@@ -40,8 +40,8 @@
       ]
     },
     "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\helpers\\Math.sol": {
-      "lastModificationDate": 1656912220464,
-      "contentHash": "397adf653d77e77077571994c3974c92",
+      "lastModificationDate": 1656918673776,
+      "contentHash": "e21ff979bb3b0838bd83e1aa14882f91",
       "sourceName": "contracts/helpers/Math.sol",
       "solcConfig": {
         "version": "0.8.10",
@@ -114,8 +114,8 @@
       ]
     },
     "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\PrimaryMarket.sol": {
-      "lastModificationDate": 1656912220459,
-      "contentHash": "00a5866810f0e86b29fd60c062242b37",
+      "lastModificationDate": 1656916442526,
+      "contentHash": "2540cbc4598bc3ddfa261629d97ead2a",
       "sourceName": "contracts/PrimaryMarket.sol",
       "solcConfig": {
         "version": "0.8.10",
@@ -195,8 +195,8 @@
       ]
     },
     "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\markets\\internal\\cdp\\VaultManager.sol": {
-      "lastModificationDate": 1656912220463,
-      "contentHash": "6e82a6a6e764e38e55670651a420a77d",
+      "lastModificationDate": 1656917416280,
+      "contentHash": "7c55e8426cf141082ee8ceb214067f0a",
       "sourceName": "contracts/markets/internal/cdp/VaultManager.sol",
       "solcConfig": {
         "version": "0.8.10",
@@ -242,8 +242,8 @@
       ]
     },
     "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\tokens\\stablecoins\\IdeaUSD.sol": {
-      "lastModificationDate": 1656910371657,
-      "contentHash": "d2d1469ca607d84f18dbc5b5c0330107",
+      "lastModificationDate": 1656918385826,
+      "contentHash": "b94880a3a4cc0471d16cfe0b0f240e7f",
       "sourceName": "contracts/tokens/stablecoins/IdeaUSD.sol",
       "solcConfig": {
         "version": "0.8.10",
@@ -316,8 +316,8 @@
       ]
     },
     "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\markets\\internal\\pools\\StakingPool.sol": {
-      "lastModificationDate": 1656910209392,
-      "contentHash": "c724d6d024d5f9b18ae1f58577516cc8",
+      "lastModificationDate": 1656918289834,
+      "contentHash": "27673b9206dcbed0e841974d7bb9258d",
       "sourceName": "contracts/markets/internal/pools/StakingPool.sol",
       "solcConfig": {
         "version": "0.8.10",
@@ -393,8 +393,8 @@
       "artifacts": []
     },
     "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\markets\\internal\\cdp\\SortedVaults.sol": {
-      "lastModificationDate": 1656865660515,
-      "contentHash": "40aec98f945102725f00d1b4cde07340",
+      "lastModificationDate": 1656917856136,
+      "contentHash": "ad2e4aecaf98b20f046557f4fddf728b",
       "sourceName": "contracts/markets/internal/cdp/SortedVaults.sol",
       "solcConfig": {
         "version": "0.8.10",
@@ -620,8 +620,8 @@
       ]
     },
     "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\markets\\internal\\pools\\StableCoinPool.sol": {
-      "lastModificationDate": 1656909495013,
-      "contentHash": "2d70eb2fd18e01c58f1a0655a4683d60",
+      "lastModificationDate": 1656918268953,
+      "contentHash": "a20856a7301a3a0a12c8d580dc2a02e5",
       "sourceName": "contracts/markets/internal/pools/StableCoinPool.sol",
       "solcConfig": {
         "version": "0.8.10",
@@ -660,8 +660,8 @@
       ]
     },
     "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\markets\\internal\\pools\\ReservePool.sol": {
-      "lastModificationDate": 1656909198407,
-      "contentHash": "3693e5138dc3bb24ce7946117d00d107",
+      "lastModificationDate": 1656918158047,
+      "contentHash": "f74b6cef5b6e434e55b92a07bb65365f",
       "sourceName": "contracts/markets/internal/pools/ReservePool.sol",
       "solcConfig": {
         "version": "0.8.10",
@@ -701,8 +701,8 @@
       ]
     },
     "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\tokens\\profitsharingtokens\\IdeaStakingToken.sol": {
-      "lastModificationDate": 1656904438611,
-      "contentHash": "89e0a893f43efcf1b0714b8e6cffabe8",
+      "lastModificationDate": 1656918442203,
+      "contentHash": "fac70a2d40af1218a0d86cfb7071e0c0",
       "sourceName": "contracts/tokens/profitsharingtokens/IdeaStakingToken.sol",
       "solcConfig": {
         "version": "0.8.10",

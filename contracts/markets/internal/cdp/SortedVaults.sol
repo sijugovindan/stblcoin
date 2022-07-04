@@ -28,7 +28,10 @@ contract SortedVaults {
 
     Data public data;
 
-    constructor(address _primaryMarket) {
+    constructor(
+        address _primaryMarket
+    ) 
+    {
         data.maxSize = 10; 
         primaryMarket = _primaryMarket;
         vaultManager = VaultManager(msg.sender);
@@ -40,11 +43,20 @@ contract SortedVaults {
      * @param _NICR Node's NICR
      */
 
-    function insert (address _id, uint256 _NICR) external onlyPrimaryMarketOrVaultManager {
+    function insert (
+        address _id, uint256 _NICR
+    ) 
+    external 
+    onlyPrimaryMarketOrVaultManager 
+    {
         _insert(_id, _NICR);
     }
 
-    function _insert(address _id, uint256 _NICR) internal {
+    function _insert(
+        address _id, 
+        uint256 _NICR
+    ) internal 
+    {
         // List must not be full
         require(!isFull(), "SortedVaults: List is full");
         
@@ -89,7 +101,12 @@ contract SortedVaults {
         data.size = data.size + 1;
     }
 
-    function remove(address _id) external onlyVaultManager {
+    function remove(
+        address _id
+    ) 
+    external 
+    onlyVaultManager 
+    {
         _remove(_id);
     }
 
@@ -97,7 +114,10 @@ contract SortedVaults {
      * @dev Remove a node from the list
      * @param _id Node's id
      */
-    function _remove(address _id) internal {
+    function _remove(
+        address _id
+    ) internal 
+    {
         // List must contain the node
         require(contains(_id), "SortedTroves: List does not contain the id");
 
@@ -138,7 +158,12 @@ contract SortedVaults {
      * @param _id Node's id
      * @param _newNICR Node's new NICR
      */
-    function reInsert(address _id, uint256 _newNICR) external onlyPrimaryMarketOrVaultManager{
+    function reInsert(
+        address _id, 
+        uint256 _newNICR
+    ) external 
+    onlyPrimaryMarketOrVaultManager
+    {
         // List must contain the node
         require(contains(_id), "SortesVaults: List does not contain the id");
         // NICR must be non-zero
@@ -153,49 +178,77 @@ contract SortedVaults {
     /*
      * @dev Checks if the list contains a node
      */
-    function contains(address _id) public view returns (bool) {
+    function contains(
+        address _id
+    ) 
+    public 
+    view 
+    returns (bool) {
         return data.nodes[_id].exists;
     }
 
     /*
      * @dev Checks if the list is full
      */
-    function isFull() public view returns (bool) {
+    function isFull() 
+    public 
+    view 
+    returns (bool) {
         return data.size == data.maxSize;
     }
 
     /*
      * @dev Checks if the list is empty
      */
-    function isEmpty() public view returns (bool) {
+    function isEmpty() 
+    public 
+    view 
+    returns (bool) 
+    {
         return data.size == 0;
     }
 
     /*
      * @dev Returns the current size of the list
      */
-    function getSize() external view returns (uint256) {
+    function getSize() 
+    external 
+    view 
+    returns (uint256) 
+    {
         return data.size;
     }
 
     /*
      * @dev Returns the maximum size of the list
      */
-    function getMaxSize() external view returns (uint256) {
+    function getMaxSize() 
+    external 
+    view 
+    returns (uint256) 
+    {
         return data.maxSize;
     }
 
     /*
      * @dev Returns the first node in the list (node with the largest NICR)
      */
-    function getFirst() external view returns (address) {
+    function getFirst() 
+    external 
+    view 
+    returns (address) 
+    {
         return data.head;
     }
 
     /*
      * @dev Returns the last node in the list (node with the smallest NICR)
      */
-    function getLast() external view returns (address) {
+    function getLast() 
+    external 
+    view 
+    returns (address) 
+    {
         return data.tail;
     }
 
@@ -203,7 +256,11 @@ contract SortedVaults {
      * @dev Returns the next node (with a smaller NICR) in the list for a given node
      * @param _id Node's id
      */
-    function getNext(address _id) external view returns (address) {
+    function getNext(address _id) 
+    external 
+    view 
+    returns (address) 
+    {
         return data.nodes[_id].nextId;
     }
 
@@ -211,11 +268,25 @@ contract SortedVaults {
      * @dev Returns the previous node (with a larger NICR) in the list for a given node
      * @param _id Node's id
      */
-    function getPrev(address _id) external view returns (address) {
+    function getPrev(
+        address _id
+    ) 
+    external 
+    view 
+    returns (address) 
+    {
         return data.nodes[_id].prevId;
     }
 
-    function _validInsertPosition(uint256 _NICR, address _prevId, address _nextId) internal view returns (bool) {
+    function _validInsertPosition(
+        uint256 _NICR, 
+        address _prevId, 
+        address _nextId
+    ) 
+    internal 
+    view 
+    returns (bool) 
+    {
         if (_prevId == address(0) && _nextId == address(0)) {
             // `(null, null)` is a valid insert position if the list is empty
             return isEmpty();
@@ -238,7 +309,14 @@ contract SortedVaults {
      * @param _NICR Node's NICR
      * @param _startId Id of node to start descending the list from
      */
-    function _descendList(uint256 _NICR, address _startId) internal view returns (address, address) {
+    function _descendList(
+        uint256 _NICR, 
+        address _startId
+    ) 
+    internal 
+    view 
+    returns (address, address) 
+    {
         // If `_startId` is the head, check if the insert position is before the head
         if (data.head == _startId && _NICR >= vaultManager.getNominalICR(_startId)) {
             return (address(0), _startId);
@@ -260,23 +338,40 @@ contract SortedVaults {
      * @dev Find the insert position for a new node with the given NICR
      * @param _NICR Node's NICR
      */
-    function findInsertPosition(uint256 _NICR) external view returns (address, address) {
+    function findInsertPosition(
+        uint256 _NICR
+    ) 
+    external 
+    view 
+    returns (address, address) 
+    {
         return _findInsertPosition(_NICR);
     }
 
-    function _findInsertPosition(uint256 _NICR) internal view returns (address, address) {
-         return _descendList(_NICR, data.head);
+    function _findInsertPosition(
+        uint256 _NICR
+    ) 
+    internal 
+    view 
+    returns (address, address) 
+    {
+        return _descendList(_NICR, data.head);
     }
 
     // modifiers
     modifier onlyVaultManager {
-        require(msg.sender == address(vaultManager), "SortedVaults: Caller is not the VaultManager");
+        require(
+            msg.sender == address(vaultManager), 
+            "SortedVaults: Caller is not the VaultManager"
+        );
         _;
     }
 
     modifier onlyPrimaryMarketOrVaultManager {
-        require(msg.sender == primaryMarket || msg.sender == address(vaultManager),
-                "SortedVaults: Caller is neither PrimaryMarket nor VaultManager");
+        require(
+            msg.sender == primaryMarket || msg.sender == address(vaultManager),
+            "SortedVaults: Caller is neither PrimaryMarket nor VaultManager"
+        );
         _;
     }
 }

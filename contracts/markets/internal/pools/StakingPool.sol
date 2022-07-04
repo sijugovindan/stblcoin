@@ -71,7 +71,11 @@ contract StakingPool is Ownable {
         _;
     }
     
-    receive() external payable onlyReservePool {
+    receive() 
+    external 
+    payable 
+    onlyReservePool 
+    {
     }
     
 }

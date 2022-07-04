@@ -18,11 +18,25 @@ library StableCoinMath {
      */
     uint internal constant NICR_PRECISION = 1e20;
 
-    function _min(uint _a, uint _b) internal pure returns (uint) {
+    function _min(
+        uint _a, 
+        uint _b
+    ) 
+    internal 
+    pure 
+    returns (uint) 
+    {
         return (_a < _b) ? _a : _b;
     }
 
-    function _max(uint _a, uint _b) internal pure returns (uint) {
+    function _max(
+        uint _a, 
+        uint _b
+    ) 
+    internal 
+    pure 
+    returns (uint) 
+    {
         return (_a >= _b) ? _a : _b;
     }
 
@@ -33,7 +47,14 @@ library StableCoinMath {
     *
     * Used only inside the exponentiation, _decPow().
     */
-    function decMul(uint x, uint y) internal pure returns (uint decProd) {
+    function decMul(
+        uint x, 
+        uint y
+    ) 
+    internal 
+    pure 
+    returns (uint decProd) 
+    {
         uint prod_xy = x * y;
         decProd = (prod_xy + DECIMAL_PRECISION / 2) / DECIMAL_PRECISION;
     }
@@ -56,7 +77,14 @@ library StableCoinMath {
     * In function 1), the decayed base rate will be 0 for 1000 years or > 1000 years
     * In function 2), the difference in tokens issued at 1000 years and any time > 1000 years, will be negligible
     */
-    function _decPow(uint _base, uint _minutes) internal pure returns (uint) {
+    function _decPow(
+        uint _base, 
+        uint _minutes
+    ) 
+    internal 
+    pure 
+    returns (uint) 
+    {
         if (_minutes > 525600000) {_minutes = 525600000;}  // cap to avoid overflow
     
         if (_minutes == 0) {return DECIMAL_PRECISION;}
@@ -80,11 +108,25 @@ library StableCoinMath {
         return decMul(x, y);
   }
 
-    function _getAbsoluteDifference(uint _a, uint _b) internal pure returns (uint) {
+    function _getAbsoluteDifference(
+        uint _a, 
+        uint _b
+    ) 
+    internal 
+    pure 
+    returns (uint) 
+    {
         return (_a >= _b) ? _a - _b : _b - _a;
     }
 
-    function _computeNominalCR(uint _coll, uint _debt) internal pure returns (uint) {
+    function _computeNominalCR(
+        uint _coll, 
+        uint _debt
+    ) 
+    internal 
+    pure 
+    returns (uint) 
+    {
         if (_debt > 0) {
             return _coll * NICR_PRECISION / _debt;
         }
@@ -94,7 +136,15 @@ library StableCoinMath {
         }
     }
 
-    function _computeCR(uint _coll, uint _debt, uint _price) internal pure returns (uint) {
+    function _computeCR(
+        uint _coll, 
+        uint _debt, 
+        uint _price
+    ) 
+    internal 
+    pure 
+    returns (uint) 
+    {
         if (_debt > 0) {
             uint newCollRatio = _coll * _price / _debt;
 
