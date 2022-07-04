@@ -9,7 +9,11 @@ contract IdeaUSD is ERC20 {
     address public vaultManagerAddress;
     address public stabilityPoolAddress;
     
-    constructor(address _vaultManagerAddress, address _stabilityPoolAddress) ERC20("LUSDToken", "LUSDToken"){
+    constructor(
+        address _vaultManagerAddress, 
+        address _stabilityPoolAddress
+    ) ERC20("IUSDToken", "IUSDToken")
+    {
         primaryMarket = msg.sender;    
         vaultManagerAddress = _vaultManagerAddress;
         stabilityPoolAddress = _stabilityPoolAddress;

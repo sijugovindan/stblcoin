@@ -13,7 +13,7 @@ contract ReservePool is Ownable {
     VaultManager public vaultManager;
     StableCoinPool public stableCoinPool;
     
-    uint256 internal totalETHDeposited;
+    uint256 internal totalReserveDeposited;
     uint256 internal totalIUSDDebt; 
     
     function setAddresses(
@@ -28,8 +28,8 @@ contract ReservePool is Ownable {
     }
     
     // Getters
-    function getETHDeposited() external view returns (uint) {
-        return totalETHDeposited;
+    function getReserveDeposited() external view returns (uint) {
+        return totalReserveDeposited;
     }
 
     function getIUSDDebt() external view returns (uint) {
@@ -37,10 +37,10 @@ contract ReservePool is Ownable {
     }
     
     // Main functionality 
-    function sendETH(address _account, uint _amount) external onlyPrimaryMarketOrVaultManagerOrStableCoinPool {
-        totalETHDeposited = totalETHDeposited - _amount;
+    function sendReserve(address _account, uint _amount) external onlyPrimaryMarketOrVaultManagerOrStableCoinPool {
+        totalReserveDeposited = totalReserveDeposited - _amount;
         (bool success, ) = _account.call{ value: _amount }("");
-        require(success, "ReservePool: sending ETH failed");
+        require(success, "ReservePool: sending Reserve failed");
     }
     
     function increaseIUSDDebt(uint _amount) external onlyPrimaryMarketOrVaultManager {
@@ -69,6 +69,6 @@ contract ReservePool is Ownable {
     
     // Fallback
     receive() external payable onlyPrimaryMarketContract {
-        totalETHDeposited = totalETHDeposited + msg.value;
+        totalReserveDeposited = totalReserveDeposited + msg.value;
     }
 }

@@ -40,8 +40,8 @@
       ]
     },
     "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\helpers\\Math.sol": {
-      "lastModificationDate": 1656865170019,
-      "contentHash": "985c4e8f999d9427a0ad918bd89b8256",
+      "lastModificationDate": 1656912220464,
+      "contentHash": "397adf653d77e77077571994c3974c92",
       "sourceName": "contracts/helpers/Math.sol",
       "solcConfig": {
         "version": "0.8.10",
@@ -114,8 +114,8 @@
       ]
     },
     "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\PrimaryMarket.sol": {
-      "lastModificationDate": 1656904274122,
-      "contentHash": "9f4b4e65faf23bf7e7fc4d52e73dea40",
+      "lastModificationDate": 1656912220459,
+      "contentHash": "00a5866810f0e86b29fd60c062242b37",
       "sourceName": "contracts/PrimaryMarket.sol",
       "solcConfig": {
         "version": "0.8.10",
@@ -195,8 +195,8 @@
       ]
     },
     "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\markets\\internal\\cdp\\VaultManager.sol": {
-      "lastModificationDate": 1656904274123,
-      "contentHash": "101d1c46a834056951413a7d5d30b37c",
+      "lastModificationDate": 1656912220463,
+      "contentHash": "6e82a6a6e764e38e55670651a420a77d",
       "sourceName": "contracts/markets/internal/cdp/VaultManager.sol",
       "solcConfig": {
         "version": "0.8.10",
@@ -242,8 +242,8 @@
       ]
     },
     "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\tokens\\stablecoins\\IdeaUSD.sol": {
-      "lastModificationDate": 1656859675504,
-      "contentHash": "1d1ae3f312b08b499d4a8b7fc333ab63",
+      "lastModificationDate": 1656910371657,
+      "contentHash": "d2d1469ca607d84f18dbc5b5c0330107",
       "sourceName": "contracts/tokens/stablecoins/IdeaUSD.sol",
       "solcConfig": {
         "version": "0.8.10",
@@ -316,8 +316,8 @@
       ]
     },
     "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\markets\\internal\\pools\\StakingPool.sol": {
-      "lastModificationDate": 1656904274122,
-      "contentHash": "ef14ae0a4f03c4b3ef112b5d0fc6c590",
+      "lastModificationDate": 1656910209392,
+      "contentHash": "c724d6d024d5f9b18ae1f58577516cc8",
       "sourceName": "contracts/markets/internal/pools/StakingPool.sol",
       "solcConfig": {
         "version": "0.8.10",
@@ -620,8 +620,8 @@
       ]
     },
     "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\markets\\internal\\pools\\StableCoinPool.sol": {
-      "lastModificationDate": 1656904096551,
-      "contentHash": "9d0ad78368c06b9b56747c7272d65cd3",
+      "lastModificationDate": 1656909495013,
+      "contentHash": "2d70eb2fd18e01c58f1a0655a4683d60",
       "sourceName": "contracts/markets/internal/pools/StableCoinPool.sol",
       "solcConfig": {
         "version": "0.8.10",
@@ -660,8 +660,8 @@
       ]
     },
     "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\markets\\internal\\pools\\ReservePool.sol": {
-      "lastModificationDate": 1656904196019,
-      "contentHash": "1087116f5834e2047adad528fdf4c8ca",
+      "lastModificationDate": 1656909198407,
+      "contentHash": "3693e5138dc3bb24ce7946117d00d107",
       "sourceName": "contracts/markets/internal/pools/ReservePool.sol",
       "solcConfig": {
         "version": "0.8.10",

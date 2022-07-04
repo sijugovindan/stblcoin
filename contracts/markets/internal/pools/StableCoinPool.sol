@@ -11,8 +11,8 @@ contract StableCoinPool is Ownable {
     IdeaUSD public iusdToken;
     VaultManager public vaultManager;
     
-    uint256 internal totalETHDeposited;
-    uint256 internal totalLUSDDeposits;
+    uint256 internal totalReserveDeposited;
+    uint256 internal totalIUSDDeposits;
      
     mapping (address => uint256) public deposits;  // depositor address -> total deposits
      
@@ -26,29 +26,29 @@ contract StableCoinPool is Ownable {
     function deposit(uint256 _amount) external {
         deposits[msg.sender] = deposits[msg.sender] + _amount;
 
-        // update LUSD Deposits
-        uint256 newTotalLUSDDeposits = totalLUSDDeposits + _amount;
-        totalLUSDDeposits = newTotalLUSDDeposits;
+        // update IUSD Deposits
+        uint256 newTotalIUSDDeposits = totalIUSDDeposits + _amount;
+        totalIUSDDeposits = newTotalIUSDDeposits;
         
-        // transfer LUSD
+        // transfer IUSD
         iusdToken.transferFrom(msg.sender, address(this), _amount);
     }
     
     function offset(uint256 _IUSDAmount) external onlyVaultManager {
         // decrease debt in active pool 
-        totalLUSDDeposits = totalLUSDDeposits - _IUSDAmount;
+        totalIUSDDeposits = totalIUSDDeposits - _IUSDAmount;
         
         // burn lusd 
         iusdToken.burn(address(this), _IUSDAmount);
     }
     
     // Getters
-    function getETHDeposited() external view returns (uint) {
-        return totalETHDeposited;
+    function getReserveDeposited() external view returns (uint) {
+        return totalReserveDeposited;
     }
     
-    function getTotalLUSDDeposits() external view returns(uint256){
-        return totalLUSDDeposits;
+    function getTotalIUSDDeposits() external view returns(uint256){
+        return totalIUSDDeposits;
     }
     
     modifier onlyVaultManager {
@@ -58,6 +58,6 @@ contract StableCoinPool is Ownable {
     
     // Fallback
     receive() external payable onlyVaultManager {
-        totalETHDeposited = totalETHDeposited + msg.value;
+        totalReserveDeposited = totalReserveDeposited + msg.value;
     }
 }

@@ -73,22 +73,22 @@ contract VaultManager is Base, Ownable {
         console.log("Price %s", price);
         
         // get vault info
-        (uint256 currentETH, uint256 currentIUSDDebt) = _getCurrentTroveAmounts(_borrower);
-        console.log("currentETH %s", currentETH);
+        (uint256 currentReserve, uint256 currentIUSDDebt) = _getCurrentTroveAmounts(_borrower);
+        console.log("currentReserve %s", currentReserve);
         console.log("currentIUSDDebt %s", currentIUSDDebt);
 
-        uint256 collateralRatio = StableCoinMath._computeCR(currentETH, currentIUSDDebt, price);
+        uint256 collateralRatio = StableCoinMath._computeCR(currentReserve, currentIUSDDebt, price);
         console.log("collateralRatio %s", collateralRatio);
         
         require(collateralRatio < MINIMUN_COLLATERAL_RATIO, "Cannot liquidate vault");
         
-        uint256 iusdInStableCoinPool = stableCoinPool.getTotalLUSDDeposits();
+        uint256 iusdInStableCoinPool = stableCoinPool.getTotalIUSDDeposits();
         require(iusdInStableCoinPool >= currentIUSDDebt, "Insufficient funds to liquidate");
         
         // calculate collateral compensation
-        uint256 collateralCompensation = currentETH / PERCENT_DIVISOR; // to get 5 %
+        uint256 collateralCompensation = currentReserve / PERCENT_DIVISOR; // to get 5 %
         uint256 gasCompensation = IUSD_GAS_COMPENSATION;
-        uint256 collateralToLiquidate = currentETH - collateralCompensation;
+        uint256 collateralToLiquidate = currentReserve - collateralCompensation;
         
         // update debt  
         reservePool.decreaseIUSDDebt(currentIUSDDebt);
@@ -96,8 +96,8 @@ contract VaultManager is Base, Ownable {
         // update debt + burn tokens 
         stableCoinPool.offset(currentIUSDDebt);
         
-        // send liquidated eth to stableCoinPool
-        reservePool.sendETH(address(stableCoinPool), collateralToLiquidate);
+        // send liquidated reserve/BNB to stableCoinPool
+        reservePool.sendReserve(address(stableCoinPool), collateralToLiquidate);
         
         // close vault 
         _closeVault(_borrower, Status.closedByLiquidation);
@@ -105,8 +105,8 @@ contract VaultManager is Base, Ownable {
         // send gas compensation 
         iusdToken.transferFrom(address(gasPool), msg.sender, gasCompensation);
         
-        // send eth liquidated (0.5%) to liquidator 
-        reservePool.sendETH(msg.sender, collateralCompensation);
+        // send reserve liquidated (0.5%) to liquidator 
+        reservePool.sendReserve(msg.sender, collateralCompensation);
     }
     
     function redemption(uint256 _amountToRedeem) external {
@@ -123,13 +123,13 @@ contract VaultManager is Base, Ownable {
         uint256 maxAmounToRedeem = StableCoinMath._min(_amountToRedeem, vaults[msg.sender].debt - IUSD_GAS_COMPENSATION);
         console.log("IUSD to redeem %s", maxAmounToRedeem);
         
-        // Get the ETHLot of equivalent value in USD
-        uint256 ethToRedeem = maxAmounToRedeem * DECIMAL_PRECISION / price;
-        console.log("Eth to redeem %s", ethToRedeem);
+        // Get the ReserveLot of equivalent value in USD
+        uint256 reserveToRedeem = maxAmounToRedeem * DECIMAL_PRECISION / price;
+        console.log("reserve to redeem %s", reserveToRedeem);
         
-        // Decrease the debt and collateral of the current Vault according to the IUSD lot and corresponding ETH to send
+        // Decrease the debt and collateral of the current Vault according to the IUSD lot and corresponding Reserve to send
         uint newDebt = vaults[borrowerToRedeemFrom].debt - maxAmounToRedeem;
-        uint newCollateral = vaults[borrowerToRedeemFrom].collateral - ethToRedeem;
+        uint newCollateral = vaults[borrowerToRedeemFrom].collateral - reserveToRedeem;
         console.log("newDebt %s", newDebt);
         console.log("newCollateral %s", newCollateral);
         
@@ -151,18 +151,18 @@ contract VaultManager is Base, Ownable {
         
          // Decay the baseRate due to time passed, and then increase it according to the size of this redemption.
         // Use the saved total IUSD supply value, from before it was reduced by the redemption.
-        _updateBaseRateFromRedemption(ethToRedeem, price, totalSystemDebt);
+        _updateBaseRateFromRedemption(reserveToRedeem, price, totalSystemDebt);
 
-        // Calculate the redemption fee in ETH
-        uint256 ethFee = _getRedemptionFee(ethToRedeem);
-        console.log("ethFee %s", ethFee);
+        // Calculate the redemption fee in Reserve
+        uint256 reserveFee = _getRedemptionFee(reserveToRedeem);
+        console.log("reserveFee %s", reserveFee);
         
-        // Send the ETH fee to the LQTY staking contract
-        reservePool.sendETH(address(stakingPool), ethFee);
-        stakingPool.increaseETHFees(ethFee);
+        // Send the Reserve fee to the LQTY staking contract
+        reservePool.sendReserve(address(stakingPool), reserveFee);
+        stakingPool.increaseReserveFees(reserveFee);
 
-        uint256 ethToSendToRedeemer = ethToRedeem - ethFee;
-        console.log("ethToSendToRedeemer %s", ethToSendToRedeemer);
+        uint256 reserveToSendToRedeemer = reserveToRedeem - reserveFee;
+        console.log("reserveToSendToRedeemer %s", reserveToSendToRedeemer);
        
         // Burn the total IUSD that is cancelled with debt
         iusdToken.burn(msg.sender, maxAmounToRedeem);
@@ -170,16 +170,16 @@ contract VaultManager is Base, Ownable {
         // Update Active Pool IUSD
         reservePool.decreaseIUSDDebt(maxAmounToRedeem);
         
-        // send ETH to redeemer
-        reservePool.sendETH(msg.sender, ethToSendToRedeemer);
+        // send Reserve to redeemer
+        reservePool.sendReserve(msg.sender, reserveToSendToRedeemer);
     }
     
-    function _updateBaseRateFromRedemption(uint _ETHDrawn,  uint _price, uint _totalIUSDSupply) internal returns (uint) {
+    function _updateBaseRateFromRedemption(uint _ReserveDrawn,  uint _price, uint _totalIUSDSupply) internal returns (uint) {
         uint decayedBaseRate = _calcDecayedBaseRate();
 
-        /* Convert the drawn ETH back to IUSD at face value rate (1 IUSD:1 USD), in order to get
+        /* Convert the drawn Reserve back to IUSD at face value rate (1 IUSD:1 USD), in order to get
         * the fraction of total supply that was redeemed at face value. */
-        uint redeemedIUSDFraction = (_ETHDrawn * _price) / _totalIUSDSupply;
+        uint redeemedIUSDFraction = (_ReserveDrawn * _price) / _totalIUSDSupply;
 
         uint newBaseRate = decayedBaseRate + (redeemedIUSDFraction / BETA);
         newBaseRate = StableCoinMath._min(newBaseRate, DECIMAL_PRECISION); // cap baseRate at a maximum of 100%
@@ -191,13 +191,13 @@ contract VaultManager is Base, Ownable {
         return newBaseRate;
     }
     
-    function _getRedemptionFee(uint _ETHDrawn) internal view returns (uint) {
-        return _calcRedemptionFee(getRedemptionRate(), _ETHDrawn);
+    function _getRedemptionFee(uint _ReserveDrawn) internal view returns (uint) {
+        return _calcRedemptionFee(getRedemptionRate(), _ReserveDrawn);
     }
     
-    function _calcRedemptionFee(uint _redemptionRate, uint _ETHDrawn) internal pure returns (uint) {
-        uint redemptionFee = _redemptionRate * _ETHDrawn / DECIMAL_PRECISION;
-        require(redemptionFee < _ETHDrawn, "TroveManager: Fee would eat up all returned collateral");
+    function _calcRedemptionFee(uint _redemptionRate, uint _ReserveDrawn) internal pure returns (uint) {
+        uint redemptionFee = _redemptionRate * _ReserveDrawn / DECIMAL_PRECISION;
+        require(redemptionFee < _ReserveDrawn, "TroveManager: Fee would eat up all returned collateral");
         return redemptionFee;
     }
     
@@ -214,9 +214,9 @@ contract VaultManager is Base, Ownable {
     
     // Return the nominal collateral ratio (ICR) of a given Trove, without the price. Takes a trove's pending coll and debt rewards from redistributions into account.
     function getNominalICR(address _borrower) public view returns (uint) {
-        (uint currentETH, uint currentIUSDDebt) = _getCurrentTroveAmounts(_borrower);
+        (uint currentReserve, uint currentIUSDDebt) = _getCurrentTroveAmounts(_borrower);
 
-        uint NICR = _computeNominalCR(currentETH, currentIUSDDebt);
+        uint NICR = _computeNominalCR(currentReserve, currentIUSDDebt);
         return NICR;
     }
     
@@ -231,10 +231,10 @@ contract VaultManager is Base, Ownable {
     }
     
     function _getCurrentTroveAmounts(address _borrower) internal view returns (uint, uint) {
-        uint currentETH = vaults[_borrower].collateral;
+        uint currentReserve = vaults[_borrower].collateral;
         uint currentIUSDDebt = vaults[_borrower].debt;
 
-        return (currentETH, currentIUSDDebt);
+        return (currentReserve, currentIUSDDebt);
     }
     
     // Updates the baseRate state variable based on time elapsed since the last redemption or IUSD PrimaryMarket operation.

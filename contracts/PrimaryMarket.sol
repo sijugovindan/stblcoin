@@ -96,9 +96,9 @@ contract PrimaryMarket is Base, Ownable{
         // create vault 
         vaultManager.createVault(msg.sender, msg.value, compositeDebt, 1);
         
-        // send Eth to ReservePool
+        // send reserve/BNB to ReservePool
         _addCollateralToReservePool(msg.value);
-        console.log("ReservePool Collateral Deposited %s", reservePool.getETHDeposited());
+        console.log("ReservePool Collateral Deposited %s", reservePool.getReserveDeposited());
         
         // mint tokens for user
         iusdToken.mint(msg.sender, IUSDAmount);
@@ -131,7 +131,7 @@ contract PrimaryMarket is Base, Ownable{
         reservePool.decreaseIUSDDebt(IUSD_GAS_COMPENSATION);
         
         // Send the collateral back to the user
-        reservePool.sendETH(msg.sender, collateral);
+        reservePool.sendReserve(msg.sender, collateral);
     }
     
     function _requireCollateralRatioIsAboveMCR(uint256 _collateralRatio) internal pure {
@@ -140,7 +140,7 @@ contract PrimaryMarket is Base, Ownable{
     
     function _addCollateralToReservePool(uint _amount) internal {
         (bool success, ) = address(reservePool).call{value: _amount}("");
-        require(success, "Borrowing: Sending ETH to ReservePool failed");
+        require(success, "Borrowing: Sending Reserve to ReservePool failed");
     }
 
 

@@ -9,7 +9,7 @@ import "./ReservePool.sol";
 import "../cdp/VaultManager.sol";
 
 contract StakingPool is Ownable {
-    uint256 public totalETHFees;
+    uint256 public totalReserveFees;
     
     uint256 public totalIUSDFees;
     
@@ -37,12 +37,12 @@ contract StakingPool is Ownable {
         totalIUSDFees = totalIUSDFees + _amount;
     }
     
-    function increaseETHFees(
+    function increaseReserveFees(
         uint256 _amount
     ) external 
         onlyVaultManagerContract 
     {
-        totalETHFees = totalETHFees + _amount;
+        totalReserveFees = totalReserveFees + _amount;
     }
     
     modifier onlyPrimaryMarketContract 
