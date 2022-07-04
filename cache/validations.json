@@ -1,0 +1,3774 @@
+{
+  "version": "3.2",
+  "log": [
+    {
+      "Ownable": {
+        "src": "@openzeppelin\\contracts\\access\\Ownable.sol:20",
+        "inherit": [
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "owner()",
+          "renounceOwnership()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Ownable",
+            "src": "@openzeppelin\\contracts\\access\\Ownable.sol:28"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin\\contracts\\access\\Ownable.sol:21"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "ERC20": {
+        "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:35",
+        "version": {
+          "withMetadata": "6d957522698a22cb9f0a745518cf21cb5acaa09d25a162a223ebecdba7c46ffa",
+          "withoutMetadata": "7bce2aea0c90474c0d173327b6d945768166acc2900fe80e4bbdd99e6bca8dfc",
+          "linkedWithoutMetadata": "7bce2aea0c90474c0d173327b6d945768166acc2900fe80e4bbdd99e6bca8dfc"
+        },
+        "inherit": [
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "(string,string)",
+          "name()",
+          "symbol()",
+          "decimals()",
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)",
+          "increaseAllowance(address,uint256)",
+          "decreaseAllowance(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ERC20",
+            "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:54"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_balances",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:36"
+            },
+            {
+              "label": "_allowances",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:38"
+            },
+            {
+              "label": "_totalSupply",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:40"
+            },
+            {
+              "label": "_name",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:42"
+            },
+            {
+              "label": "_symbol",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:43"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "IERC20": {
+        "src": "@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol:9",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "IERC20Metadata": {
+        "src": "@openzeppelin\\contracts\\token\\ERC20\\extensions\\IERC20Metadata.sol:13",
+        "inherit": [
+          "IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "name()",
+          "symbol()",
+          "decimals()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "Context": {
+        "src": "@openzeppelin\\contracts\\utils\\Context.sol:16",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "PrimaryMarket": {
+        "src": "contracts\\PrimaryMarket.sol:18",
+        "version": {
+          "withMetadata": "0fb868e466ea6221542b119fc82cf9b7e0e0e547f27db6a9fa1a5ad1b1047e9b",
+          "withoutMetadata": "ad720ecbe1fcfb3865b0aa065ee1f3dba832f6658da1eb12ebc838c80a3307ed",
+          "linkedWithoutMetadata": "ad720ecbe1fcfb3865b0aa065ee1f3dba832f6658da1eb12ebc838c80a3307ed"
+        },
+        "inherit": [
+          "Ownable",
+          "Context",
+          "Base"
+        ],
+        "libraries": [
+          "console"
+        ],
+        "methods": [
+          "()",
+          "mint(uint256)",
+          "repay()",
+          "redeem()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "PrimaryMarket",
+            "src": "contracts\\PrimaryMarket.sol:29"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin\\contracts\\access\\Ownable.sol:21"
+            },
+            {
+              "label": "priceFeed",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_contract(PriceFeed)1620",
+              "contract": "PrimaryMarket",
+              "src": "contracts\\PrimaryMarket.sol:19"
+            },
+            {
+              "label": "vaultManager",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_contract(VaultManager)3426",
+              "contract": "PrimaryMarket",
+              "src": "contracts\\PrimaryMarket.sol:20"
+            },
+            {
+              "label": "iusdToken",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_contract(IdeaUSD)4036",
+              "contract": "PrimaryMarket",
+              "src": "contracts\\PrimaryMarket.sol:21"
+            },
+            {
+              "label": "reservePool",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_contract(ReservePool)3637",
+              "contract": "PrimaryMarket",
+              "src": "contracts\\PrimaryMarket.sol:24"
+            },
+            {
+              "label": "stableCoinPool",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_contract(StableCoinPool)3790",
+              "contract": "PrimaryMarket",
+              "src": "contracts\\PrimaryMarket.sol:25"
+            },
+            {
+              "label": "gasPool",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_contract(GasPool)3429",
+              "contract": "PrimaryMarket",
+              "src": "contracts\\PrimaryMarket.sol:26"
+            },
+            {
+              "label": "stakingPool",
+              "offset": 0,
+              "slot": "7",
+              "type": "t_contract(StakingPool)3921",
+              "contract": "PrimaryMarket",
+              "src": "contracts\\PrimaryMarket.sol:27"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_contract(GasPool)3429": {
+              "label": "contract GasPool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(IdeaUSD)4036": {
+              "label": "contract IdeaUSD",
+              "numberOfBytes": "20"
+            },
+            "t_contract(PriceFeed)1620": {
+              "label": "contract PriceFeed",
+              "numberOfBytes": "20"
+            },
+            "t_contract(ReservePool)3637": {
+              "label": "contract ReservePool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(StableCoinPool)3790": {
+              "label": "contract StableCoinPool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(StakingPool)3921": {
+              "label": "contract StakingPool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(VaultManager)3426": {
+              "label": "contract VaultManager",
+              "numberOfBytes": "20"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "Base": {
+        "src": "contracts\\helpers\\Base.sol:7",
+        "version": {
+          "withMetadata": "65841aea40a45cc1f5d0db462ae6e1da77b61fc4b0f8e8d72ba5dab861eed9e9",
+          "withoutMetadata": "96d1619d5a6f0b116177eecd0ee5572f97bcd9a196c2c131cd8bd6dd17501447",
+          "linkedWithoutMetadata": "96d1619d5a6f0b116177eecd0ee5572f97bcd9a196c2c131cd8bd6dd17501447"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "StableCoinMath": {
+        "src": "contracts\\helpers\\Math.sol:7",
+        "version": {
+          "withMetadata": "403fe57d54d6ccc7c5810f4f5d109375e62752df54d3463c6b39db3d293ebcd1",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "PriceFeed": {
+        "src": "contracts\\markets\\external\\price\\PriceFeed.sol:5",
+        "version": {
+          "withMetadata": "fefedb56a75151f0bc87a06d3cc5c0eb7d06c1c291196d80e86fe062a5eed244",
+          "withoutMetadata": "1e086dc1219df8786f1536fa0ef35c75dfbee115b25542305f64816b4d41e875",
+          "linkedWithoutMetadata": "1e086dc1219df8786f1536fa0ef35c75dfbee115b25542305f64816b4d41e875"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "setPrice(uint256)",
+          "getPrice()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "latestPrice",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_uint256",
+              "contract": "PriceFeed",
+              "src": "contracts\\markets\\external\\price\\PriceFeed.sol:6"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "SortedVaults": {
+        "src": "contracts\\markets\\internal\\cdp\\SortedVaults.sol:8",
+        "version": {
+          "withMetadata": "a83d0841fd68b1878ad2a74da34e6ee1f15f0f1fd5aee831920050d67689bd9f",
+          "withoutMetadata": "cf53a9fa400bfd2f7630e0100a729381c76e8ca3d92b627587a52e5508786ecd",
+          "linkedWithoutMetadata": "cf53a9fa400bfd2f7630e0100a729381c76e8ca3d92b627587a52e5508786ecd"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "insert(address,uint256)",
+          "remove(address)",
+          "reInsert(address,uint256)",
+          "contains(address)",
+          "isFull()",
+          "isEmpty()",
+          "getSize()",
+          "getMaxSize()",
+          "getFirst()",
+          "getLast()",
+          "getNext(address)",
+          "getPrev(address)",
+          "findInsertPosition(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "SortedVaults",
+            "src": "contracts\\markets\\internal\\cdp\\SortedVaults.sol:31"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "primaryMarket",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "SortedVaults",
+              "src": "contracts\\markets\\internal\\cdp\\SortedVaults.sol:9"
+            },
+            {
+              "label": "vaultManager",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_contract(VaultManager)3426",
+              "contract": "SortedVaults",
+              "src": "contracts\\markets\\internal\\cdp\\SortedVaults.sol:11"
+            },
+            {
+              "label": "data",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_struct(Data)1650_storage",
+              "contract": "SortedVaults",
+              "src": "contracts\\markets\\internal\\cdp\\SortedVaults.sol:29"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_contract(VaultManager)3426": {
+              "label": "contract VaultManager",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_struct(Node)1636_storage)": {
+              "label": "mapping(address => struct SortedVaults.Node)",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Data)1650_storage": {
+              "label": "struct SortedVaults.Data",
+              "members": [
+                {
+                  "label": "head",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "tail",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "maxSize",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "size",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "nodes",
+                  "type": "t_mapping(t_address,t_struct(Node)1636_storage)",
+                  "offset": 0,
+                  "slot": "4"
+                }
+              ],
+              "numberOfBytes": "160"
+            },
+            "t_struct(Node)1636_storage": {
+              "label": "struct SortedVaults.Node",
+              "members": [
+                {
+                  "label": "exists",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "nextId",
+                  "type": "t_address",
+                  "offset": 1,
+                  "slot": "0"
+                },
+                {
+                  "label": "prevId",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "1"
+                }
+              ],
+              "numberOfBytes": "64"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "VaultManager": {
+        "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:21",
+        "version": {
+          "withMetadata": "442c76e39210ac5fa73826dde7d9b516fcf882484c742ff4d26342e67d347eae",
+          "withoutMetadata": "5232466892d6e78882b47fd31036648529f87e1f86adc8096bc512133474309f",
+          "linkedWithoutMetadata": "5232466892d6e78882b47fd31036648529f87e1f86adc8096bc512133474309f"
+        },
+        "inherit": [
+          "Ownable",
+          "Context",
+          "Base"
+        ],
+        "libraries": [
+          "console",
+          "StableCoinMath"
+        ],
+        "methods": [
+          "setAddresses(address,address,address,address,address,address)",
+          "liquidate(address)",
+          "redemption(uint256)",
+          "getRedemptionRate()",
+          "getNominalICR(address)",
+          "decayBaseRateFromBorrowing()",
+          "getBorrowingFee(uint256)",
+          "getBorrowingRate()",
+          "getVaultDebt(address)",
+          "getVaultCollateral(address)",
+          "createVault(address,uint256,uint256,uint256)",
+          "closeVault(address)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin\\contracts\\access\\Ownable.sol:21"
+            },
+            {
+              "label": "priceFeed",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_contract(PriceFeed)1620",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:22"
+            },
+            {
+              "label": "primaryMarket",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_contract(PrimaryMarket)1293",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:23"
+            },
+            {
+              "label": "iusdToken",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_contract(IdeaUSD)4036",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:24"
+            },
+            {
+              "label": "sortedVaults",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_contract(SortedVaults)2425",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:25"
+            },
+            {
+              "label": "stableCoinPool",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_contract(StableCoinPool)3790",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:28"
+            },
+            {
+              "label": "reservePool",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_contract(ReservePool)3637",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:29"
+            },
+            {
+              "label": "gasPool",
+              "offset": 0,
+              "slot": "7",
+              "type": "t_contract(GasPool)3429",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:30"
+            },
+            {
+              "label": "stakingPool",
+              "offset": 0,
+              "slot": "8",
+              "type": "t_contract(StakingPool)3921",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:31"
+            },
+            {
+              "label": "baseRate",
+              "offset": 0,
+              "slot": "9",
+              "type": "t_uint256",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:33"
+            },
+            {
+              "label": "lastFeeOperationTime",
+              "offset": 0,
+              "slot": "10",
+              "type": "t_uint256",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:36"
+            },
+            {
+              "label": "vaults",
+              "offset": 0,
+              "slot": "11",
+              "type": "t_mapping(t_address,t_struct(Vault)2483_storage)",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:53"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_contract(GasPool)3429": {
+              "label": "contract GasPool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(IdeaUSD)4036": {
+              "label": "contract IdeaUSD",
+              "numberOfBytes": "20"
+            },
+            "t_contract(PriceFeed)1620": {
+              "label": "contract PriceFeed",
+              "numberOfBytes": "20"
+            },
+            "t_contract(PrimaryMarket)1293": {
+              "label": "contract PrimaryMarket",
+              "numberOfBytes": "20"
+            },
+            "t_contract(ReservePool)3637": {
+              "label": "contract ReservePool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(SortedVaults)2425": {
+              "label": "contract SortedVaults",
+              "numberOfBytes": "20"
+            },
+            "t_contract(StableCoinPool)3790": {
+              "label": "contract StableCoinPool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(StakingPool)3921": {
+              "label": "contract StakingPool",
+              "numberOfBytes": "20"
+            },
+            "t_enum(Status)2475": {
+              "label": "enum VaultManager.Status",
+              "members": [
+                "nonExistent",
+                "active",
+                "closedByOwner",
+                "closedByLiquidation",
+                "closedByRedemption"
+              ],
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_struct(Vault)2483_storage)": {
+              "label": "mapping(address => struct VaultManager.Vault)",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Vault)2483_storage": {
+              "label": "struct VaultManager.Vault",
+              "members": [
+                {
+                  "label": "debt",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "collateral",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "status",
+                  "type": "t_enum(Status)2475",
+                  "offset": 0,
+                  "slot": "2"
+                }
+              ],
+              "numberOfBytes": "96"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "GasPool": {
+        "src": "contracts\\markets\\internal\\pools\\GasPool.sol:5",
+        "version": {
+          "withMetadata": "74958dcdcc74300f58fac10ba29349bba1b6799bb834a0bf22c20a252e079b6d",
+          "withoutMetadata": "ac0db523ddc3e330f735df7b3b0b24460531c71290a891170e840f8f67d5ff6b",
+          "linkedWithoutMetadata": "ac0db523ddc3e330f735df7b3b0b24460531c71290a891170e840f8f67d5ff6b"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "ReservePool": {
+        "src": "contracts\\markets\\internal\\pools\\ReservePool.sol:11",
+        "version": {
+          "withMetadata": "2719fb25f28ee5a57a9a8bedcffc5cf54a47f979343dc2e4dd778c08bb43d3c3",
+          "withoutMetadata": "87f163b73e5d033b0c24910f2549a6489e23bdd220e0a4865adb8d32362697bb",
+          "linkedWithoutMetadata": "87f163b73e5d033b0c24910f2549a6489e23bdd220e0a4865adb8d32362697bb"
+        },
+        "inherit": [
+          "Ownable",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "setAddresses(address,address,address)",
+          "getETHDeposited()",
+          "getIUSDDebt()",
+          "sendETH(address,uint256)",
+          "increaseIUSDDebt(uint256)",
+          "decreaseIUSDDebt(uint256)",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin\\contracts\\access\\Ownable.sol:21"
+            },
+            {
+              "label": "primaryMarket",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_contract(PrimaryMarket)1293",
+              "contract": "ReservePool",
+              "src": "contracts\\markets\\internal\\pools\\ReservePool.sol:12"
+            },
+            {
+              "label": "vaultManager",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_contract(VaultManager)3426",
+              "contract": "ReservePool",
+              "src": "contracts\\markets\\internal\\pools\\ReservePool.sol:13"
+            },
+            {
+              "label": "stableCoinPool",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_contract(StableCoinPool)3790",
+              "contract": "ReservePool",
+              "src": "contracts\\markets\\internal\\pools\\ReservePool.sol:14"
+            },
+            {
+              "label": "totalETHDeposited",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_uint256",
+              "contract": "ReservePool",
+              "src": "contracts\\markets\\internal\\pools\\ReservePool.sol:16"
+            },
+            {
+              "label": "totalIUSDDebt",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_uint256",
+              "contract": "ReservePool",
+              "src": "contracts\\markets\\internal\\pools\\ReservePool.sol:17"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_contract(PrimaryMarket)1293": {
+              "label": "contract PrimaryMarket",
+              "numberOfBytes": "20"
+            },
+            "t_contract(StableCoinPool)3790": {
+              "label": "contract StableCoinPool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(VaultManager)3426": {
+              "label": "contract VaultManager",
+              "numberOfBytes": "20"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "StableCoinPool": {
+        "src": "contracts\\markets\\internal\\pools\\StableCoinPool.sol:10",
+        "version": {
+          "withMetadata": "03519a46939e359c6cfc91a39aa36fdb8fed2473f25a54aa5b7e5f1e71aa220f",
+          "withoutMetadata": "5c865abad715291ed5c8d2445788dff9a3a177e44172ded57d2de31c9368d001",
+          "linkedWithoutMetadata": "5c865abad715291ed5c8d2445788dff9a3a177e44172ded57d2de31c9368d001"
+        },
+        "inherit": [
+          "Ownable",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "setAddresses(address,address)",
+          "deposit(uint256)",
+          "offset(uint256)",
+          "getETHDeposited()",
+          "getTotalLUSDDeposits()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin\\contracts\\access\\Ownable.sol:21"
+            },
+            {
+              "label": "iusdToken",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_contract(IdeaUSD)4036",
+              "contract": "StableCoinPool",
+              "src": "contracts\\markets\\internal\\pools\\StableCoinPool.sol:11"
+            },
+            {
+              "label": "vaultManager",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_contract(VaultManager)3426",
+              "contract": "StableCoinPool",
+              "src": "contracts\\markets\\internal\\pools\\StableCoinPool.sol:12"
+            },
+            {
+              "label": "totalETHDeposited",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_uint256",
+              "contract": "StableCoinPool",
+              "src": "contracts\\markets\\internal\\pools\\StableCoinPool.sol:14"
+            },
+            {
+              "label": "totalLUSDDeposits",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_uint256",
+              "contract": "StableCoinPool",
+              "src": "contracts\\markets\\internal\\pools\\StableCoinPool.sol:15"
+            },
+            {
+              "label": "deposits",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "StableCoinPool",
+              "src": "contracts\\markets\\internal\\pools\\StableCoinPool.sol:17"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_contract(IdeaUSD)4036": {
+              "label": "contract IdeaUSD",
+              "numberOfBytes": "20"
+            },
+            "t_contract(VaultManager)3426": {
+              "label": "contract VaultManager",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "StakingPool": {
+        "src": "contracts\\markets\\internal\\pools\\StakingPool.sol:11",
+        "version": {
+          "withMetadata": "8fb11d5542511c7c373381c8f21e1f6197e855d73cef0e9db2a8ec075474a9b4",
+          "withoutMetadata": "b90835c960df1b803ae905a6b2f12344227e0a98791de9ebc3bfc6aaad846285",
+          "linkedWithoutMetadata": "b90835c960df1b803ae905a6b2f12344227e0a98791de9ebc3bfc6aaad846285"
+        },
+        "inherit": [
+          "Ownable",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "setAddresses(address,address,address)",
+          "increaseIUSDFees(uint256)",
+          "increaseETHFees(uint256)",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin\\contracts\\access\\Ownable.sol:21"
+            },
+            {
+              "label": "totalETHFees",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_uint256",
+              "contract": "StakingPool",
+              "src": "contracts\\markets\\internal\\pools\\StakingPool.sol:12"
+            },
+            {
+              "label": "totalIUSDFees",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "StakingPool",
+              "src": "contracts\\markets\\internal\\pools\\StakingPool.sol:14"
+            },
+            {
+              "label": "primaryMarket",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_contract(PrimaryMarket)1293",
+              "contract": "StakingPool",
+              "src": "contracts\\markets\\internal\\pools\\StakingPool.sol:16"
+            },
+            {
+              "label": "reservePool",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_contract(ReservePool)3637",
+              "contract": "StakingPool",
+              "src": "contracts\\markets\\internal\\pools\\StakingPool.sol:17"
+            },
+            {
+              "label": "vaultManager",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_contract(VaultManager)3426",
+              "contract": "StakingPool",
+              "src": "contracts\\markets\\internal\\pools\\StakingPool.sol:18"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_contract(PrimaryMarket)1293": {
+              "label": "contract PrimaryMarket",
+              "numberOfBytes": "20"
+            },
+            "t_contract(ReservePool)3637": {
+              "label": "contract ReservePool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(VaultManager)3426": {
+              "label": "contract VaultManager",
+              "numberOfBytes": "20"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "IdeaStakingToken": {
+        "src": "contracts\\tokens\\profitsharingtokens\\IdeaStakingToken.sol:7",
+        "version": {
+          "withMetadata": "3b82c9fa1323a43862a8b586a1d3b72581200c6385c824d590f527734a332c9d",
+          "withoutMetadata": "6d778e7c719b7db21bad2899bcb6258a71fab67b82d9bdebd9dd5082688ea503",
+          "linkedWithoutMetadata": "6d778e7c719b7db21bad2899bcb6258a71fab67b82d9bdebd9dd5082688ea503"
+        },
+        "inherit": [
+          "ERC20",
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "IdeaStakingToken",
+            "src": "contracts\\tokens\\profitsharingtokens\\IdeaStakingToken.sol:9"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_balances",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:36"
+            },
+            {
+              "label": "_allowances",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:38"
+            },
+            {
+              "label": "_totalSupply",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:40"
+            },
+            {
+              "label": "_name",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:42"
+            },
+            {
+              "label": "_symbol",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:43"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "IdeaUSD": {
+        "src": "contracts\\tokens\\stablecoins\\IdeaUSD.sol:7",
+        "version": {
+          "withMetadata": "e4391fde09500f0dd6fc119d2564a70e5d8b119b8da217c4c42650ff9ad14562",
+          "withoutMetadata": "57dbd3bd538c1f5aafbb3a7febdd0fb4c00f8fe4477e2528bf516b7750452765",
+          "linkedWithoutMetadata": "57dbd3bd538c1f5aafbb3a7febdd0fb4c00f8fe4477e2528bf516b7750452765"
+        },
+        "inherit": [
+          "ERC20",
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address,address)",
+          "mint(address,uint256)",
+          "burn(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "IdeaUSD",
+            "src": "contracts\\tokens\\stablecoins\\IdeaUSD.sol:12"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_balances",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:36"
+            },
+            {
+              "label": "_allowances",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:38"
+            },
+            {
+              "label": "_totalSupply",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:40"
+            },
+            {
+              "label": "_name",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:42"
+            },
+            {
+              "label": "_symbol",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:43"
+            },
+            {
+              "label": "primaryMarket",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_address",
+              "contract": "IdeaUSD",
+              "src": "contracts\\tokens\\stablecoins\\IdeaUSD.sol:8"
+            },
+            {
+              "label": "vaultManagerAddress",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_address",
+              "contract": "IdeaUSD",
+              "src": "contracts\\tokens\\stablecoins\\IdeaUSD.sol:9"
+            },
+            {
+              "label": "stabilityPoolAddress",
+              "offset": 0,
+              "slot": "7",
+              "type": "t_address",
+              "contract": "IdeaUSD",
+              "src": "contracts\\tokens\\stablecoins\\IdeaUSD.sol:10"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "console": {
+        "src": "hardhat\\console.sol:4",
+        "version": {
+          "withMetadata": "60a70b52a21714ff5d7d4a969e3bbc0bcee83402c3db5ff955b612eccb8808f1",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      }
+    },
+    {
+      "Ownable": {
+        "src": "@openzeppelin\\contracts\\access\\Ownable.sol:20",
+        "inherit": [
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "owner()",
+          "renounceOwnership()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Ownable",
+            "src": "@openzeppelin\\contracts\\access\\Ownable.sol:28"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin\\contracts\\access\\Ownable.sol:21"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "ERC20": {
+        "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:35",
+        "version": {
+          "withMetadata": "6d957522698a22cb9f0a745518cf21cb5acaa09d25a162a223ebecdba7c46ffa",
+          "withoutMetadata": "7bce2aea0c90474c0d173327b6d945768166acc2900fe80e4bbdd99e6bca8dfc",
+          "linkedWithoutMetadata": "7bce2aea0c90474c0d173327b6d945768166acc2900fe80e4bbdd99e6bca8dfc"
+        },
+        "inherit": [
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "(string,string)",
+          "name()",
+          "symbol()",
+          "decimals()",
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)",
+          "increaseAllowance(address,uint256)",
+          "decreaseAllowance(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ERC20",
+            "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:54"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_balances",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:36"
+            },
+            {
+              "label": "_allowances",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:38"
+            },
+            {
+              "label": "_totalSupply",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:40"
+            },
+            {
+              "label": "_name",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:42"
+            },
+            {
+              "label": "_symbol",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:43"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "IERC20": {
+        "src": "@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol:9",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "IERC20Metadata": {
+        "src": "@openzeppelin\\contracts\\token\\ERC20\\extensions\\IERC20Metadata.sol:13",
+        "inherit": [
+          "IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "name()",
+          "symbol()",
+          "decimals()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "Context": {
+        "src": "@openzeppelin\\contracts\\utils\\Context.sol:16",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "PrimaryMarket": {
+        "src": "contracts\\PrimaryMarket.sol:18",
+        "version": {
+          "withMetadata": "05a5cde779240171452c04bc454c15864a8ef5cc5742605b02f6110823d854c7",
+          "withoutMetadata": "943d4e152caf05bd475518344ea4c8e2fca221b97341999e77e107c5a1e823f0",
+          "linkedWithoutMetadata": "943d4e152caf05bd475518344ea4c8e2fca221b97341999e77e107c5a1e823f0"
+        },
+        "inherit": [
+          "Ownable",
+          "Context",
+          "Base"
+        ],
+        "libraries": [
+          "console"
+        ],
+        "methods": [
+          "()",
+          "mint(uint256)",
+          "repay()",
+          "redeem()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "PrimaryMarket",
+            "src": "contracts\\PrimaryMarket.sol:29"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin\\contracts\\access\\Ownable.sol:21"
+            },
+            {
+              "label": "priceFeed",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_contract(PriceFeed)1620",
+              "contract": "PrimaryMarket",
+              "src": "contracts\\PrimaryMarket.sol:19"
+            },
+            {
+              "label": "vaultManager",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_contract(VaultManager)3426",
+              "contract": "PrimaryMarket",
+              "src": "contracts\\PrimaryMarket.sol:20"
+            },
+            {
+              "label": "iusdToken",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_contract(IdeaUSD)4022",
+              "contract": "PrimaryMarket",
+              "src": "contracts\\PrimaryMarket.sol:21"
+            },
+            {
+              "label": "activeReservePool",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_contract(ActiveReservePool)3634",
+              "contract": "PrimaryMarket",
+              "src": "contracts\\PrimaryMarket.sol:24"
+            },
+            {
+              "label": "stableCoinPool",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_contract(StableCoinPool)3790",
+              "contract": "PrimaryMarket",
+              "src": "contracts\\PrimaryMarket.sol:25"
+            },
+            {
+              "label": "gasPool",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_contract(GasPool)3637",
+              "contract": "PrimaryMarket",
+              "src": "contracts\\PrimaryMarket.sol:26"
+            },
+            {
+              "label": "stakingPool",
+              "offset": 0,
+              "slot": "7",
+              "type": "t_contract(StakingPool)3921",
+              "contract": "PrimaryMarket",
+              "src": "contracts\\PrimaryMarket.sol:27"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_contract(ActiveReservePool)3634": {
+              "label": "contract ActiveReservePool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(GasPool)3637": {
+              "label": "contract GasPool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(IdeaUSD)4022": {
+              "label": "contract IdeaUSD",
+              "numberOfBytes": "20"
+            },
+            "t_contract(PriceFeed)1620": {
+              "label": "contract PriceFeed",
+              "numberOfBytes": "20"
+            },
+            "t_contract(StableCoinPool)3790": {
+              "label": "contract StableCoinPool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(StakingPool)3921": {
+              "label": "contract StakingPool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(VaultManager)3426": {
+              "label": "contract VaultManager",
+              "numberOfBytes": "20"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "Base": {
+        "src": "contracts\\helpers\\Base.sol:7",
+        "version": {
+          "withMetadata": "65841aea40a45cc1f5d0db462ae6e1da77b61fc4b0f8e8d72ba5dab861eed9e9",
+          "withoutMetadata": "96d1619d5a6f0b116177eecd0ee5572f97bcd9a196c2c131cd8bd6dd17501447",
+          "linkedWithoutMetadata": "96d1619d5a6f0b116177eecd0ee5572f97bcd9a196c2c131cd8bd6dd17501447"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "StableCoinMath": {
+        "src": "contracts\\helpers\\Math.sol:7",
+        "version": {
+          "withMetadata": "403fe57d54d6ccc7c5810f4f5d109375e62752df54d3463c6b39db3d293ebcd1",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "PriceFeed": {
+        "src": "contracts\\markets\\external\\price\\PriceFeed.sol:5",
+        "version": {
+          "withMetadata": "fefedb56a75151f0bc87a06d3cc5c0eb7d06c1c291196d80e86fe062a5eed244",
+          "withoutMetadata": "1e086dc1219df8786f1536fa0ef35c75dfbee115b25542305f64816b4d41e875",
+          "linkedWithoutMetadata": "1e086dc1219df8786f1536fa0ef35c75dfbee115b25542305f64816b4d41e875"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "setPrice(uint256)",
+          "getPrice()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "latestPrice",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_uint256",
+              "contract": "PriceFeed",
+              "src": "contracts\\markets\\external\\price\\PriceFeed.sol:6"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "SortedVaults": {
+        "src": "contracts\\markets\\internal\\cdp\\SortedVaults.sol:8",
+        "version": {
+          "withMetadata": "2cc46f960d8f34a81db8104aacd42ab9b66581a543c40577687cfcceede5ff21",
+          "withoutMetadata": "cf53a9fa400bfd2f7630e0100a729381c76e8ca3d92b627587a52e5508786ecd",
+          "linkedWithoutMetadata": "cf53a9fa400bfd2f7630e0100a729381c76e8ca3d92b627587a52e5508786ecd"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "insert(address,uint256)",
+          "remove(address)",
+          "reInsert(address,uint256)",
+          "contains(address)",
+          "isFull()",
+          "isEmpty()",
+          "getSize()",
+          "getMaxSize()",
+          "getFirst()",
+          "getLast()",
+          "getNext(address)",
+          "getPrev(address)",
+          "findInsertPosition(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "SortedVaults",
+            "src": "contracts\\markets\\internal\\cdp\\SortedVaults.sol:31"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "primaryMarket",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "SortedVaults",
+              "src": "contracts\\markets\\internal\\cdp\\SortedVaults.sol:9"
+            },
+            {
+              "label": "vaultManager",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_contract(VaultManager)3426",
+              "contract": "SortedVaults",
+              "src": "contracts\\markets\\internal\\cdp\\SortedVaults.sol:11"
+            },
+            {
+              "label": "data",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_struct(Data)1650_storage",
+              "contract": "SortedVaults",
+              "src": "contracts\\markets\\internal\\cdp\\SortedVaults.sol:29"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_contract(VaultManager)3426": {
+              "label": "contract VaultManager",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_struct(Node)1636_storage)": {
+              "label": "mapping(address => struct SortedVaults.Node)",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Data)1650_storage": {
+              "label": "struct SortedVaults.Data",
+              "members": [
+                {
+                  "label": "head",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "tail",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "maxSize",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "size",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "nodes",
+                  "type": "t_mapping(t_address,t_struct(Node)1636_storage)",
+                  "offset": 0,
+                  "slot": "4"
+                }
+              ],
+              "numberOfBytes": "160"
+            },
+            "t_struct(Node)1636_storage": {
+              "label": "struct SortedVaults.Node",
+              "members": [
+                {
+                  "label": "exists",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "nextId",
+                  "type": "t_address",
+                  "offset": 1,
+                  "slot": "0"
+                },
+                {
+                  "label": "prevId",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "1"
+                }
+              ],
+              "numberOfBytes": "64"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "VaultManager": {
+        "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:21",
+        "version": {
+          "withMetadata": "2ba5335d62478ee00bfbf6a20786355c5aabad4736ca2e09f3ff2b151893ef64",
+          "withoutMetadata": "df630317d67b5cf0d9fd5153c529b250312dbb2de3de761130b1a6aaf820c65c",
+          "linkedWithoutMetadata": "df630317d67b5cf0d9fd5153c529b250312dbb2de3de761130b1a6aaf820c65c"
+        },
+        "inherit": [
+          "Ownable",
+          "Context",
+          "Base"
+        ],
+        "libraries": [
+          "console",
+          "StableCoinMath"
+        ],
+        "methods": [
+          "setAddresses(address,address,address,address,address,address)",
+          "liquidate(address)",
+          "redemption(uint256)",
+          "getRedemptionRate()",
+          "getNominalICR(address)",
+          "decayBaseRateFromBorrowing()",
+          "getBorrowingFee(uint256)",
+          "getBorrowingRate()",
+          "getVaultDebt(address)",
+          "getVaultCollateral(address)",
+          "createVault(address,uint256,uint256,uint256)",
+          "closeVault(address)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin\\contracts\\access\\Ownable.sol:21"
+            },
+            {
+              "label": "priceFeed",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_contract(PriceFeed)1620",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:22"
+            },
+            {
+              "label": "primaryMarket",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_contract(PrimaryMarket)1293",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:23"
+            },
+            {
+              "label": "iusdToken",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_contract(IdeaUSD)4022",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:24"
+            },
+            {
+              "label": "sortedVaults",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_contract(SortedVaults)2425",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:25"
+            },
+            {
+              "label": "stableCoinPool",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_contract(StableCoinPool)3790",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:28"
+            },
+            {
+              "label": "activeReservePool",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_contract(ActiveReservePool)3634",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:29"
+            },
+            {
+              "label": "gasPool",
+              "offset": 0,
+              "slot": "7",
+              "type": "t_contract(GasPool)3637",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:30"
+            },
+            {
+              "label": "stakingPool",
+              "offset": 0,
+              "slot": "8",
+              "type": "t_contract(StakingPool)3921",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:31"
+            },
+            {
+              "label": "baseRate",
+              "offset": 0,
+              "slot": "9",
+              "type": "t_uint256",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:33"
+            },
+            {
+              "label": "lastFeeOperationTime",
+              "offset": 0,
+              "slot": "10",
+              "type": "t_uint256",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:36"
+            },
+            {
+              "label": "vaults",
+              "offset": 0,
+              "slot": "11",
+              "type": "t_mapping(t_address,t_struct(Vault)2483_storage)",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:53"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_contract(ActiveReservePool)3634": {
+              "label": "contract ActiveReservePool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(GasPool)3637": {
+              "label": "contract GasPool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(IdeaUSD)4022": {
+              "label": "contract IdeaUSD",
+              "numberOfBytes": "20"
+            },
+            "t_contract(PriceFeed)1620": {
+              "label": "contract PriceFeed",
+              "numberOfBytes": "20"
+            },
+            "t_contract(PrimaryMarket)1293": {
+              "label": "contract PrimaryMarket",
+              "numberOfBytes": "20"
+            },
+            "t_contract(SortedVaults)2425": {
+              "label": "contract SortedVaults",
+              "numberOfBytes": "20"
+            },
+            "t_contract(StableCoinPool)3790": {
+              "label": "contract StableCoinPool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(StakingPool)3921": {
+              "label": "contract StakingPool",
+              "numberOfBytes": "20"
+            },
+            "t_enum(Status)2475": {
+              "label": "enum VaultManager.Status",
+              "members": [
+                "nonExistent",
+                "active",
+                "closedByOwner",
+                "closedByLiquidation",
+                "closedByRedemption"
+              ],
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_struct(Vault)2483_storage)": {
+              "label": "mapping(address => struct VaultManager.Vault)",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Vault)2483_storage": {
+              "label": "struct VaultManager.Vault",
+              "members": [
+                {
+                  "label": "debt",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "collateral",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "status",
+                  "type": "t_enum(Status)2475",
+                  "offset": 0,
+                  "slot": "2"
+                }
+              ],
+              "numberOfBytes": "96"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "ActiveReservePool": {
+        "src": "contracts\\markets\\internal\\pools\\ActiveReservePool.sol:11",
+        "version": {
+          "withMetadata": "8447c56e08b75b8b9bde4f6f7b6ce22934ca8300cd8c77617117b7a9501d3bde",
+          "withoutMetadata": "dfe4c1ae342a36180272648194fd2093e11578cf1b653ef0c1a4d1d8b9a82f80",
+          "linkedWithoutMetadata": "dfe4c1ae342a36180272648194fd2093e11578cf1b653ef0c1a4d1d8b9a82f80"
+        },
+        "inherit": [
+          "Ownable",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "setAddresses(address,address,address)",
+          "getETHDeposited()",
+          "getIUSDDebt()",
+          "sendETH(address,uint256)",
+          "increaseIUSDDebt(uint256)",
+          "decreaseIUSDDebt(uint256)",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin\\contracts\\access\\Ownable.sol:21"
+            },
+            {
+              "label": "primaryMarket",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_contract(PrimaryMarket)1293",
+              "contract": "ActiveReservePool",
+              "src": "contracts\\markets\\internal\\pools\\ActiveReservePool.sol:12"
+            },
+            {
+              "label": "vaultManager",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_contract(VaultManager)3426",
+              "contract": "ActiveReservePool",
+              "src": "contracts\\markets\\internal\\pools\\ActiveReservePool.sol:13"
+            },
+            {
+              "label": "stableCoinPool",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_contract(StableCoinPool)3790",
+              "contract": "ActiveReservePool",
+              "src": "contracts\\markets\\internal\\pools\\ActiveReservePool.sol:14"
+            },
+            {
+              "label": "totalETHDeposited",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_uint256",
+              "contract": "ActiveReservePool",
+              "src": "contracts\\markets\\internal\\pools\\ActiveReservePool.sol:16"
+            },
+            {
+              "label": "totalIUSDDebt",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_uint256",
+              "contract": "ActiveReservePool",
+              "src": "contracts\\markets\\internal\\pools\\ActiveReservePool.sol:17"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_contract(PrimaryMarket)1293": {
+              "label": "contract PrimaryMarket",
+              "numberOfBytes": "20"
+            },
+            "t_contract(StableCoinPool)3790": {
+              "label": "contract StableCoinPool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(VaultManager)3426": {
+              "label": "contract VaultManager",
+              "numberOfBytes": "20"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "GasPool": {
+        "src": "contracts\\markets\\internal\\pools\\GasPool.sol:5",
+        "version": {
+          "withMetadata": "74958dcdcc74300f58fac10ba29349bba1b6799bb834a0bf22c20a252e079b6d",
+          "withoutMetadata": "ac0db523ddc3e330f735df7b3b0b24460531c71290a891170e840f8f67d5ff6b",
+          "linkedWithoutMetadata": "ac0db523ddc3e330f735df7b3b0b24460531c71290a891170e840f8f67d5ff6b"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "StableCoinPool": {
+        "src": "contracts\\markets\\internal\\pools\\StableCoinPool.sol:10",
+        "version": {
+          "withMetadata": "2ccb501c8dba6c74d2864c74d704afc353b3920744824110ff9767698208abbd",
+          "withoutMetadata": "5c865abad715291ed5c8d2445788dff9a3a177e44172ded57d2de31c9368d001",
+          "linkedWithoutMetadata": "5c865abad715291ed5c8d2445788dff9a3a177e44172ded57d2de31c9368d001"
+        },
+        "inherit": [
+          "Ownable",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "setAddresses(address,address)",
+          "deposit(uint256)",
+          "offset(uint256)",
+          "getETHDeposited()",
+          "getTotalLUSDDeposits()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin\\contracts\\access\\Ownable.sol:21"
+            },
+            {
+              "label": "iusdToken",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_contract(IdeaUSD)4022",
+              "contract": "StableCoinPool",
+              "src": "contracts\\markets\\internal\\pools\\StableCoinPool.sol:11"
+            },
+            {
+              "label": "vaultManager",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_contract(VaultManager)3426",
+              "contract": "StableCoinPool",
+              "src": "contracts\\markets\\internal\\pools\\StableCoinPool.sol:12"
+            },
+            {
+              "label": "totalETHDeposited",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_uint256",
+              "contract": "StableCoinPool",
+              "src": "contracts\\markets\\internal\\pools\\StableCoinPool.sol:14"
+            },
+            {
+              "label": "totalLUSDDeposits",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_uint256",
+              "contract": "StableCoinPool",
+              "src": "contracts\\markets\\internal\\pools\\StableCoinPool.sol:15"
+            },
+            {
+              "label": "deposits",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "StableCoinPool",
+              "src": "contracts\\markets\\internal\\pools\\StableCoinPool.sol:17"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_contract(IdeaUSD)4022": {
+              "label": "contract IdeaUSD",
+              "numberOfBytes": "20"
+            },
+            "t_contract(VaultManager)3426": {
+              "label": "contract VaultManager",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "StakingPool": {
+        "src": "contracts\\markets\\internal\\pools\\StakingPool.sol:11",
+        "version": {
+          "withMetadata": "7262853702612f1bc8c3a4ebf7738cf8184d017d050136adec3e1266e9f22401",
+          "withoutMetadata": "cd4d58f1febc44a893282343568554363286c88352fb04020747e2ea268298c0",
+          "linkedWithoutMetadata": "cd4d58f1febc44a893282343568554363286c88352fb04020747e2ea268298c0"
+        },
+        "inherit": [
+          "Ownable",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "setAddresses(address,address,address)",
+          "increaseIUSDFees(uint256)",
+          "increaseETHFees(uint256)",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin\\contracts\\access\\Ownable.sol:21"
+            },
+            {
+              "label": "totalETHFees",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_uint256",
+              "contract": "StakingPool",
+              "src": "contracts\\markets\\internal\\pools\\StakingPool.sol:12"
+            },
+            {
+              "label": "totalIUSDFees",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "StakingPool",
+              "src": "contracts\\markets\\internal\\pools\\StakingPool.sol:14"
+            },
+            {
+              "label": "primaryMarket",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_contract(PrimaryMarket)1293",
+              "contract": "StakingPool",
+              "src": "contracts\\markets\\internal\\pools\\StakingPool.sol:16"
+            },
+            {
+              "label": "activeReservePool",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_contract(ActiveReservePool)3634",
+              "contract": "StakingPool",
+              "src": "contracts\\markets\\internal\\pools\\StakingPool.sol:17"
+            },
+            {
+              "label": "vaultManager",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_contract(VaultManager)3426",
+              "contract": "StakingPool",
+              "src": "contracts\\markets\\internal\\pools\\StakingPool.sol:18"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_contract(ActiveReservePool)3634": {
+              "label": "contract ActiveReservePool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(PrimaryMarket)1293": {
+              "label": "contract PrimaryMarket",
+              "numberOfBytes": "20"
+            },
+            "t_contract(VaultManager)3426": {
+              "label": "contract VaultManager",
+              "numberOfBytes": "20"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "IdeaUSD": {
+        "src": "contracts\\tokens\\stablecoins\\IdeaUSD.sol:7",
+        "version": {
+          "withMetadata": "e4391fde09500f0dd6fc119d2564a70e5d8b119b8da217c4c42650ff9ad14562",
+          "withoutMetadata": "57dbd3bd538c1f5aafbb3a7febdd0fb4c00f8fe4477e2528bf516b7750452765",
+          "linkedWithoutMetadata": "57dbd3bd538c1f5aafbb3a7febdd0fb4c00f8fe4477e2528bf516b7750452765"
+        },
+        "inherit": [
+          "ERC20",
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address,address)",
+          "mint(address,uint256)",
+          "burn(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "IdeaUSD",
+            "src": "contracts\\tokens\\stablecoins\\IdeaUSD.sol:12"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_balances",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:36"
+            },
+            {
+              "label": "_allowances",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:38"
+            },
+            {
+              "label": "_totalSupply",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:40"
+            },
+            {
+              "label": "_name",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:42"
+            },
+            {
+              "label": "_symbol",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:43"
+            },
+            {
+              "label": "primaryMarket",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_address",
+              "contract": "IdeaUSD",
+              "src": "contracts\\tokens\\stablecoins\\IdeaUSD.sol:8"
+            },
+            {
+              "label": "vaultManagerAddress",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_address",
+              "contract": "IdeaUSD",
+              "src": "contracts\\tokens\\stablecoins\\IdeaUSD.sol:9"
+            },
+            {
+              "label": "stabilityPoolAddress",
+              "offset": 0,
+              "slot": "7",
+              "type": "t_address",
+              "contract": "IdeaUSD",
+              "src": "contracts\\tokens\\stablecoins\\IdeaUSD.sol:10"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "console": {
+        "src": "hardhat\\console.sol:4",
+        "version": {
+          "withMetadata": "60a70b52a21714ff5d7d4a969e3bbc0bcee83402c3db5ff955b612eccb8808f1",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      }
+    },
+    {
+      "Ownable": {
+        "src": "@openzeppelin\\contracts\\access\\Ownable.sol:20",
+        "inherit": [
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "owner()",
+          "renounceOwnership()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Ownable",
+            "src": "@openzeppelin\\contracts\\access\\Ownable.sol:28"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin\\contracts\\access\\Ownable.sol:21"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "ERC20": {
+        "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:35",
+        "version": {
+          "withMetadata": "6d957522698a22cb9f0a745518cf21cb5acaa09d25a162a223ebecdba7c46ffa",
+          "withoutMetadata": "7bce2aea0c90474c0d173327b6d945768166acc2900fe80e4bbdd99e6bca8dfc",
+          "linkedWithoutMetadata": "7bce2aea0c90474c0d173327b6d945768166acc2900fe80e4bbdd99e6bca8dfc"
+        },
+        "inherit": [
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "(string,string)",
+          "name()",
+          "symbol()",
+          "decimals()",
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)",
+          "increaseAllowance(address,uint256)",
+          "decreaseAllowance(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ERC20",
+            "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:54"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_balances",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:36"
+            },
+            {
+              "label": "_allowances",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:38"
+            },
+            {
+              "label": "_totalSupply",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:40"
+            },
+            {
+              "label": "_name",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:42"
+            },
+            {
+              "label": "_symbol",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:43"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "IERC20": {
+        "src": "@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol:9",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "IERC20Metadata": {
+        "src": "@openzeppelin\\contracts\\token\\ERC20\\extensions\\IERC20Metadata.sol:13",
+        "inherit": [
+          "IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "name()",
+          "symbol()",
+          "decimals()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "Context": {
+        "src": "@openzeppelin\\contracts\\utils\\Context.sol:16",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "PrimaryMarket": {
+        "src": "contracts\\PrimaryMarket.sol:18",
+        "version": {
+          "withMetadata": "f519b1eb741ad36163600b5b1d555b989fa106ccf6a714fc95bfe9f8a7029234",
+          "withoutMetadata": "c788019a90f8a7b5294df95bc904e5c33b8584c3d87076ad5effeaabfcbec0f9",
+          "linkedWithoutMetadata": "c788019a90f8a7b5294df95bc904e5c33b8584c3d87076ad5effeaabfcbec0f9"
+        },
+        "inherit": [
+          "Ownable",
+          "Context",
+          "Base"
+        ],
+        "libraries": [
+          "console"
+        ],
+        "methods": [
+          "()",
+          "mint(uint256)",
+          "repay()",
+          "redeem()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "PrimaryMarket",
+            "src": "contracts\\PrimaryMarket.sol:29"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin\\contracts\\access\\Ownable.sol:21"
+            },
+            {
+              "label": "priceFeed",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_contract(PriceFeed)1620",
+              "contract": "PrimaryMarket",
+              "src": "contracts\\PrimaryMarket.sol:19"
+            },
+            {
+              "label": "vaultManager",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_contract(VaultManager)3426",
+              "contract": "PrimaryMarket",
+              "src": "contracts\\PrimaryMarket.sol:20"
+            },
+            {
+              "label": "iusdToken",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_contract(IdeaUSD)4022",
+              "contract": "PrimaryMarket",
+              "src": "contracts\\PrimaryMarket.sol:21"
+            },
+            {
+              "label": "activePool",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_contract(ActivePool)3634",
+              "contract": "PrimaryMarket",
+              "src": "contracts\\PrimaryMarket.sol:24"
+            },
+            {
+              "label": "stabilityPool",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_contract(StabilityPool)3790",
+              "contract": "PrimaryMarket",
+              "src": "contracts\\PrimaryMarket.sol:25"
+            },
+            {
+              "label": "gasPool",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_contract(GasPool)3637",
+              "contract": "PrimaryMarket",
+              "src": "contracts\\PrimaryMarket.sol:26"
+            },
+            {
+              "label": "stakingPool",
+              "offset": 0,
+              "slot": "7",
+              "type": "t_contract(StakingPool)3921",
+              "contract": "PrimaryMarket",
+              "src": "contracts\\PrimaryMarket.sol:27"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_contract(ActivePool)3634": {
+              "label": "contract ActivePool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(GasPool)3637": {
+              "label": "contract GasPool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(IdeaUSD)4022": {
+              "label": "contract IdeaUSD",
+              "numberOfBytes": "20"
+            },
+            "t_contract(PriceFeed)1620": {
+              "label": "contract PriceFeed",
+              "numberOfBytes": "20"
+            },
+            "t_contract(StabilityPool)3790": {
+              "label": "contract StabilityPool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(StakingPool)3921": {
+              "label": "contract StakingPool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(VaultManager)3426": {
+              "label": "contract VaultManager",
+              "numberOfBytes": "20"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "Base": {
+        "src": "contracts\\helpers\\Base.sol:7",
+        "version": {
+          "withMetadata": "cf83d7c4ca7a013eee7b0a30874f123d669a8ca8f00a8ac7e1c85f58e9e4bb2e",
+          "withoutMetadata": "96d1619d5a6f0b116177eecd0ee5572f97bcd9a196c2c131cd8bd6dd17501447",
+          "linkedWithoutMetadata": "96d1619d5a6f0b116177eecd0ee5572f97bcd9a196c2c131cd8bd6dd17501447"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "StableCoinMath": {
+        "src": "contracts\\helpers\\Math.sol:7",
+        "version": {
+          "withMetadata": "403fe57d54d6ccc7c5810f4f5d109375e62752df54d3463c6b39db3d293ebcd1",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "PriceFeed": {
+        "src": "contracts\\markets\\external\\price\\PriceFeed.sol:5",
+        "version": {
+          "withMetadata": "fefedb56a75151f0bc87a06d3cc5c0eb7d06c1c291196d80e86fe062a5eed244",
+          "withoutMetadata": "1e086dc1219df8786f1536fa0ef35c75dfbee115b25542305f64816b4d41e875",
+          "linkedWithoutMetadata": "1e086dc1219df8786f1536fa0ef35c75dfbee115b25542305f64816b4d41e875"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "setPrice(uint256)",
+          "getPrice()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "latestPrice",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_uint256",
+              "contract": "PriceFeed",
+              "src": "contracts\\markets\\external\\price\\PriceFeed.sol:6"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "SortedVaults": {
+        "src": "contracts\\markets\\internal\\cdp\\SortedVaults.sol:8",
+        "version": {
+          "withMetadata": "0e8334d2ee3f658348eea1c9fc934e788ba83ad6bf6fb5ba978b30ea892553e3",
+          "withoutMetadata": "cf53a9fa400bfd2f7630e0100a729381c76e8ca3d92b627587a52e5508786ecd",
+          "linkedWithoutMetadata": "cf53a9fa400bfd2f7630e0100a729381c76e8ca3d92b627587a52e5508786ecd"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "insert(address,uint256)",
+          "remove(address)",
+          "reInsert(address,uint256)",
+          "contains(address)",
+          "isFull()",
+          "isEmpty()",
+          "getSize()",
+          "getMaxSize()",
+          "getFirst()",
+          "getLast()",
+          "getNext(address)",
+          "getPrev(address)",
+          "findInsertPosition(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "SortedVaults",
+            "src": "contracts\\markets\\internal\\cdp\\SortedVaults.sol:31"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "primaryMarket",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "SortedVaults",
+              "src": "contracts\\markets\\internal\\cdp\\SortedVaults.sol:9"
+            },
+            {
+              "label": "vaultManager",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_contract(VaultManager)3426",
+              "contract": "SortedVaults",
+              "src": "contracts\\markets\\internal\\cdp\\SortedVaults.sol:11"
+            },
+            {
+              "label": "data",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_struct(Data)1650_storage",
+              "contract": "SortedVaults",
+              "src": "contracts\\markets\\internal\\cdp\\SortedVaults.sol:29"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_contract(VaultManager)3426": {
+              "label": "contract VaultManager",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_struct(Node)1636_storage)": {
+              "label": "mapping(address => struct SortedVaults.Node)",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Data)1650_storage": {
+              "label": "struct SortedVaults.Data",
+              "members": [
+                {
+                  "label": "head",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "tail",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "maxSize",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "size",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "nodes",
+                  "type": "t_mapping(t_address,t_struct(Node)1636_storage)",
+                  "offset": 0,
+                  "slot": "4"
+                }
+              ],
+              "numberOfBytes": "160"
+            },
+            "t_struct(Node)1636_storage": {
+              "label": "struct SortedVaults.Node",
+              "members": [
+                {
+                  "label": "exists",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "nextId",
+                  "type": "t_address",
+                  "offset": 1,
+                  "slot": "0"
+                },
+                {
+                  "label": "prevId",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "1"
+                }
+              ],
+              "numberOfBytes": "64"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "VaultManager": {
+        "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:21",
+        "version": {
+          "withMetadata": "ba2dfe29ab36a5fb774ddcc659a47b2d4b8759d049c497397813dfef34162b59",
+          "withoutMetadata": "9be987a9f34f588d718368bc37cd7342294ba8a036355812bb1dcdcdf9d9286c",
+          "linkedWithoutMetadata": "9be987a9f34f588d718368bc37cd7342294ba8a036355812bb1dcdcdf9d9286c"
+        },
+        "inherit": [
+          "Ownable",
+          "Context",
+          "Base"
+        ],
+        "libraries": [
+          "console",
+          "StableCoinMath"
+        ],
+        "methods": [
+          "setAddresses(address,address,address,address,address,address)",
+          "liquidate(address)",
+          "redemption(uint256)",
+          "getRedemptionRate()",
+          "getNominalICR(address)",
+          "decayBaseRateFromBorrowing()",
+          "getBorrowingFee(uint256)",
+          "getBorrowingRate()",
+          "getVaultDebt(address)",
+          "getVaultCollateral(address)",
+          "createVault(address,uint256,uint256,uint256)",
+          "closeVault(address)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin\\contracts\\access\\Ownable.sol:21"
+            },
+            {
+              "label": "priceFeed",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_contract(PriceFeed)1620",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:22"
+            },
+            {
+              "label": "primaryMarket",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_contract(PrimaryMarket)1293",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:23"
+            },
+            {
+              "label": "iusdToken",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_contract(IdeaUSD)4022",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:24"
+            },
+            {
+              "label": "sortedVaults",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_contract(SortedVaults)2425",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:25"
+            },
+            {
+              "label": "stabilityPool",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_contract(StabilityPool)3790",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:28"
+            },
+            {
+              "label": "activePool",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_contract(ActivePool)3634",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:29"
+            },
+            {
+              "label": "gasPool",
+              "offset": 0,
+              "slot": "7",
+              "type": "t_contract(GasPool)3637",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:30"
+            },
+            {
+              "label": "stakingPool",
+              "offset": 0,
+              "slot": "8",
+              "type": "t_contract(StakingPool)3921",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:31"
+            },
+            {
+              "label": "baseRate",
+              "offset": 0,
+              "slot": "9",
+              "type": "t_uint256",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:33"
+            },
+            {
+              "label": "lastFeeOperationTime",
+              "offset": 0,
+              "slot": "10",
+              "type": "t_uint256",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:36"
+            },
+            {
+              "label": "vaults",
+              "offset": 0,
+              "slot": "11",
+              "type": "t_mapping(t_address,t_struct(Vault)2483_storage)",
+              "contract": "VaultManager",
+              "src": "contracts\\markets\\internal\\cdp\\VaultManager.sol:53"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_contract(ActivePool)3634": {
+              "label": "contract ActivePool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(GasPool)3637": {
+              "label": "contract GasPool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(IdeaUSD)4022": {
+              "label": "contract IdeaUSD",
+              "numberOfBytes": "20"
+            },
+            "t_contract(PriceFeed)1620": {
+              "label": "contract PriceFeed",
+              "numberOfBytes": "20"
+            },
+            "t_contract(PrimaryMarket)1293": {
+              "label": "contract PrimaryMarket",
+              "numberOfBytes": "20"
+            },
+            "t_contract(SortedVaults)2425": {
+              "label": "contract SortedVaults",
+              "numberOfBytes": "20"
+            },
+            "t_contract(StabilityPool)3790": {
+              "label": "contract StabilityPool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(StakingPool)3921": {
+              "label": "contract StakingPool",
+              "numberOfBytes": "20"
+            },
+            "t_enum(Status)2475": {
+              "label": "enum VaultManager.Status",
+              "members": [
+                "nonExistent",
+                "active",
+                "closedByOwner",
+                "closedByLiquidation",
+                "closedByRedemption"
+              ],
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_struct(Vault)2483_storage)": {
+              "label": "mapping(address => struct VaultManager.Vault)",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Vault)2483_storage": {
+              "label": "struct VaultManager.Vault",
+              "members": [
+                {
+                  "label": "debt",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "collateral",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "status",
+                  "type": "t_enum(Status)2475",
+                  "offset": 0,
+                  "slot": "2"
+                }
+              ],
+              "numberOfBytes": "96"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "ActivePool": {
+        "src": "contracts\\markets\\internal\\pools\\ActivePool.sol:11",
+        "version": {
+          "withMetadata": "d6dcb08b76b1110107ba7989e50d7efc0e24f8052c54d129b0015717a77379a4",
+          "withoutMetadata": "7d5810e5a4effd95af460eb1aa2751912c10d9d02e9927870589de0f4ea12f7b",
+          "linkedWithoutMetadata": "7d5810e5a4effd95af460eb1aa2751912c10d9d02e9927870589de0f4ea12f7b"
+        },
+        "inherit": [
+          "Ownable",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "setAddresses(address,address,address)",
+          "getETHDeposited()",
+          "getLUSDDebt()",
+          "sendETH(address,uint256)",
+          "increaseLUSDDebt(uint256)",
+          "decreaseLUSDDebt(uint256)",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin\\contracts\\access\\Ownable.sol:21"
+            },
+            {
+              "label": "primaryMarket",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_contract(PrimaryMarket)1293",
+              "contract": "ActivePool",
+              "src": "contracts\\markets\\internal\\pools\\ActivePool.sol:12"
+            },
+            {
+              "label": "vaultManager",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_contract(VaultManager)3426",
+              "contract": "ActivePool",
+              "src": "contracts\\markets\\internal\\pools\\ActivePool.sol:13"
+            },
+            {
+              "label": "stabilityPool",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_contract(StabilityPool)3790",
+              "contract": "ActivePool",
+              "src": "contracts\\markets\\internal\\pools\\ActivePool.sol:14"
+            },
+            {
+              "label": "totalETHDeposited",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_uint256",
+              "contract": "ActivePool",
+              "src": "contracts\\markets\\internal\\pools\\ActivePool.sol:16"
+            },
+            {
+              "label": "totalLUSDDebt",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_uint256",
+              "contract": "ActivePool",
+              "src": "contracts\\markets\\internal\\pools\\ActivePool.sol:17"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_contract(PrimaryMarket)1293": {
+              "label": "contract PrimaryMarket",
+              "numberOfBytes": "20"
+            },
+            "t_contract(StabilityPool)3790": {
+              "label": "contract StabilityPool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(VaultManager)3426": {
+              "label": "contract VaultManager",
+              "numberOfBytes": "20"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "GasPool": {
+        "src": "contracts\\markets\\internal\\pools\\GasPool.sol:5",
+        "version": {
+          "withMetadata": "74958dcdcc74300f58fac10ba29349bba1b6799bb834a0bf22c20a252e079b6d",
+          "withoutMetadata": "ac0db523ddc3e330f735df7b3b0b24460531c71290a891170e840f8f67d5ff6b",
+          "linkedWithoutMetadata": "ac0db523ddc3e330f735df7b3b0b24460531c71290a891170e840f8f67d5ff6b"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "StabilityPool": {
+        "src": "contracts\\markets\\internal\\pools\\StabilityPool.sol:10",
+        "version": {
+          "withMetadata": "1967b3b76ecb8c0606dd13650b606873f698074ad431136598c504b540ed1ede",
+          "withoutMetadata": "59acf3ebf108aeadad2df6dccd4037582a4fedbf2ffd00caec9b98a3a85c0974",
+          "linkedWithoutMetadata": "59acf3ebf108aeadad2df6dccd4037582a4fedbf2ffd00caec9b98a3a85c0974"
+        },
+        "inherit": [
+          "Ownable",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "setAddresses(address,address)",
+          "deposit(uint256)",
+          "offset(uint256)",
+          "getETHDeposited()",
+          "getTotalLUSDDeposits()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin\\contracts\\access\\Ownable.sol:21"
+            },
+            {
+              "label": "iusdToken",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_contract(IdeaUSD)4022",
+              "contract": "StabilityPool",
+              "src": "contracts\\markets\\internal\\pools\\StabilityPool.sol:11"
+            },
+            {
+              "label": "vaultManager",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_contract(VaultManager)3426",
+              "contract": "StabilityPool",
+              "src": "contracts\\markets\\internal\\pools\\StabilityPool.sol:12"
+            },
+            {
+              "label": "totalETHDeposited",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_uint256",
+              "contract": "StabilityPool",
+              "src": "contracts\\markets\\internal\\pools\\StabilityPool.sol:14"
+            },
+            {
+              "label": "totalLUSDDeposits",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_uint256",
+              "contract": "StabilityPool",
+              "src": "contracts\\markets\\internal\\pools\\StabilityPool.sol:15"
+            },
+            {
+              "label": "deposits",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "StabilityPool",
+              "src": "contracts\\markets\\internal\\pools\\StabilityPool.sol:17"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_contract(IdeaUSD)4022": {
+              "label": "contract IdeaUSD",
+              "numberOfBytes": "20"
+            },
+            "t_contract(VaultManager)3426": {
+              "label": "contract VaultManager",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "StakingPool": {
+        "src": "contracts\\markets\\internal\\pools\\StakingPool.sol:11",
+        "version": {
+          "withMetadata": "abb41570b4c946c90fe8239da908810e83fcc837861fafd11e2b9e2f4a398fbf",
+          "withoutMetadata": "7c2c5e49cf70d039e9e8cd4639b615cf220083ff355ebb88cdde43cd0f7e281d",
+          "linkedWithoutMetadata": "7c2c5e49cf70d039e9e8cd4639b615cf220083ff355ebb88cdde43cd0f7e281d"
+        },
+        "inherit": [
+          "Ownable",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "setAddresses(address,address,address)",
+          "increaseLUSDFees(uint256)",
+          "increaseETHFees(uint256)",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin\\contracts\\access\\Ownable.sol:21"
+            },
+            {
+              "label": "totalETHFees",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_uint256",
+              "contract": "StakingPool",
+              "src": "contracts\\markets\\internal\\pools\\StakingPool.sol:12"
+            },
+            {
+              "label": "totalLUSDFees",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "StakingPool",
+              "src": "contracts\\markets\\internal\\pools\\StakingPool.sol:14"
+            },
+            {
+              "label": "primaryMarket",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_contract(PrimaryMarket)1293",
+              "contract": "StakingPool",
+              "src": "contracts\\markets\\internal\\pools\\StakingPool.sol:16"
+            },
+            {
+              "label": "activePool",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_contract(ActivePool)3634",
+              "contract": "StakingPool",
+              "src": "contracts\\markets\\internal\\pools\\StakingPool.sol:17"
+            },
+            {
+              "label": "vaultManager",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_contract(VaultManager)3426",
+              "contract": "StakingPool",
+              "src": "contracts\\markets\\internal\\pools\\StakingPool.sol:18"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_contract(ActivePool)3634": {
+              "label": "contract ActivePool",
+              "numberOfBytes": "20"
+            },
+            "t_contract(PrimaryMarket)1293": {
+              "label": "contract PrimaryMarket",
+              "numberOfBytes": "20"
+            },
+            "t_contract(VaultManager)3426": {
+              "label": "contract VaultManager",
+              "numberOfBytes": "20"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "IdeaUSD": {
+        "src": "contracts\\tokens\\stablecoins\\IdeaUSD.sol:7",
+        "version": {
+          "withMetadata": "e4391fde09500f0dd6fc119d2564a70e5d8b119b8da217c4c42650ff9ad14562",
+          "withoutMetadata": "57dbd3bd538c1f5aafbb3a7febdd0fb4c00f8fe4477e2528bf516b7750452765",
+          "linkedWithoutMetadata": "57dbd3bd538c1f5aafbb3a7febdd0fb4c00f8fe4477e2528bf516b7750452765"
+        },
+        "inherit": [
+          "ERC20",
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address,address)",
+          "mint(address,uint256)",
+          "burn(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "IdeaUSD",
+            "src": "contracts\\tokens\\stablecoins\\IdeaUSD.sol:12"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_balances",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:36"
+            },
+            {
+              "label": "_allowances",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:38"
+            },
+            {
+              "label": "_totalSupply",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:40"
+            },
+            {
+              "label": "_name",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:42"
+            },
+            {
+              "label": "_symbol",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:43"
+            },
+            {
+              "label": "primaryMarket",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_address",
+              "contract": "IdeaUSD",
+              "src": "contracts\\tokens\\stablecoins\\IdeaUSD.sol:8"
+            },
+            {
+              "label": "vaultManagerAddress",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_address",
+              "contract": "IdeaUSD",
+              "src": "contracts\\tokens\\stablecoins\\IdeaUSD.sol:9"
+            },
+            {
+              "label": "stabilityPoolAddress",
+              "offset": 0,
+              "slot": "7",
+              "type": "t_address",
+              "contract": "IdeaUSD",
+              "src": "contracts\\tokens\\stablecoins\\IdeaUSD.sol:10"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "console": {
+        "src": "hardhat\\console.sol:4",
+        "version": {
+          "withMetadata": "60a70b52a21714ff5d7d4a969e3bbc0bcee83402c3db5ff955b612eccb8808f1",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      }
+    }
+  ]
+}

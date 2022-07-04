@@ -1,0 +1,742 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\helpers\\Base.sol": {
+      "lastModificationDate": 1656900646101,
+      "contentHash": "894dcba7f09bc508c9f1e553cab70fb3",
+      "sourceName": "contracts/helpers/Base.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Math.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.7"
+      ],
+      "artifacts": [
+        "Base"
+      ]
+    },
+    "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\helpers\\Math.sol": {
+      "lastModificationDate": 1656865170019,
+      "contentHash": "985c4e8f999d9427a0ad918bd89b8256",
+      "sourceName": "contracts/helpers/Math.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.7"
+      ],
+      "artifacts": [
+        "StableCoinMath"
+      ]
+    },
+    "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\node_modules\\hardhat\\console.sol": {
+      "lastModificationDate": 1656864608870,
+      "contentHash": "cc4777addd464ea56fa35b1c45df0591",
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
+      ]
+    },
+    "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\PrimaryMarket.sol": {
+      "lastModificationDate": 1656904274122,
+      "contentHash": "9f4b4e65faf23bf7e7fc4d52e73dea40",
+      "sourceName": "contracts/PrimaryMarket.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./helpers/Base.sol",
+        "./markets/external/price/PriceFeed.sol",
+        "./markets/internal/cdp/VaultManager.sol",
+        "./tokens/stablecoins/IdeaUSD.sol",
+        "./markets/internal/pools/ReservePool.sol",
+        "./markets/internal/pools/StableCoinPool.sol",
+        "./markets/internal/pools/GasPool.sol",
+        "./markets/internal/pools/StakingPool.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.10"
+      ],
+      "artifacts": [
+        "PrimaryMarket"
+      ]
+    },
+    "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\markets\\external\\price\\PriceFeed.sol": {
+      "lastModificationDate": 1656864851871,
+      "contentHash": "8a101545c2fc6bf3cd40ea58fc492bdf",
+      "sourceName": "contracts/markets/external/price/PriceFeed.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.7"
+      ],
+      "artifacts": [
+        "PriceFeed"
+      ]
+    },
+    "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\markets\\internal\\cdp\\VaultManager.sol": {
+      "lastModificationDate": 1656904274123,
+      "contentHash": "101d1c46a834056951413a7d5d30b37c",
+      "sourceName": "contracts/markets/internal/cdp/VaultManager.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/interfaces/IERC20.sol",
+        "../../external/price/PriceFeed.sol",
+        "../../../PrimaryMarket.sol",
+        "../../../helpers/Base.sol",
+        "../../../tokens/stablecoins/IdeaUSD.sol",
+        "./SortedVaults.sol",
+        "../pools/ReservePool.sol",
+        "../pools/StableCoinPool.sol",
+        "../pools/GasPool.sol",
+        "../pools/StakingPool.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.7"
+      ],
+      "artifacts": [
+        "VaultManager"
+      ]
+    },
+    "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\tokens\\stablecoins\\IdeaUSD.sol": {
+      "lastModificationDate": 1656859675504,
+      "contentHash": "1d1ae3f312b08b499d4a8b7fc333ab63",
+      "sourceName": "contracts/tokens/stablecoins/IdeaUSD.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.7"
+      ],
+      "artifacts": [
+        "IdeaUSD"
+      ]
+    },
+    "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\markets\\internal\\pools\\GasPool.sol": {
+      "lastModificationDate": 1656904121883,
+      "contentHash": "e0815cc9c8c4ae1b0bbb37c7a544c1f9",
+      "sourceName": "contracts/markets/internal/pools/GasPool.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.7"
+      ],
+      "artifacts": [
+        "GasPool"
+      ]
+    },
+    "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\markets\\internal\\pools\\StakingPool.sol": {
+      "lastModificationDate": 1656904274122,
+      "contentHash": "ef14ae0a4f03c4b3ef112b5d0fc6c590",
+      "sourceName": "contracts/markets/internal/pools/StakingPool.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/access/Ownable.sol",
+        "../../../PrimaryMarket.sol",
+        "./ReservePool.sol",
+        "../cdp/VaultManager.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.7"
+      ],
+      "artifacts": [
+        "StakingPool"
+      ]
+    },
+    "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\node_modules\\@openzeppelin\\contracts\\interfaces\\IERC20.sol": {
+      "lastModificationDate": 1656864492685,
+      "contentHash": "d151fbfe7939989b9acf22797b32058b",
+      "sourceName": "@openzeppelin/contracts/interfaces/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": []
+    },
+    "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\markets\\internal\\cdp\\SortedVaults.sol": {
+      "lastModificationDate": 1656865660515,
+      "contentHash": "40aec98f945102725f00d1b4cde07340",
+      "sourceName": "contracts/markets/internal/cdp/SortedVaults.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./VaultManager.sol",
+        "../../../PrimaryMarket.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.7"
+      ],
+      "artifacts": [
+        "SortedVaults"
+      ]
+    },
+    "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol": {
+      "lastModificationDate": 1656864493184,
+      "contentHash": "ad7c2d0af148c8f9f097d65deeb4da6b",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol": {
+      "lastModificationDate": 1656864472222,
+      "contentHash": "af7bd64e1cfefbf6cb07f2adc1a25392",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "./extensions/IERC20Metadata.sol",
+        "../../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\extensions\\IERC20Metadata.sol": {
+      "lastModificationDate": 1656864494133,
+      "contentHash": "909ab67fc5c25033fe6cd364f8c056f9",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20Metadata"
+      ]
+    },
+    "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\node_modules\\@openzeppelin\\contracts\\utils\\Context.sol": {
+      "lastModificationDate": 1656864452237,
+      "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
+      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\node_modules\\@openzeppelin\\contracts\\access\\Ownable.sol": {
+      "lastModificationDate": 1656864505743,
+      "contentHash": "e436cea06129be2c73cda4b1acc848b5",
+      "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\markets\\internal\\pools\\StableCoinPool.sol": {
+      "lastModificationDate": 1656904096551,
+      "contentHash": "9d0ad78368c06b9b56747c7272d65cd3",
+      "sourceName": "contracts/markets/internal/pools/StableCoinPool.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/access/Ownable.sol",
+        "../../../tokens/stablecoins/IdeaUSD.sol",
+        "../cdp/VaultManager.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.7"
+      ],
+      "artifacts": [
+        "StableCoinPool"
+      ]
+    },
+    "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\markets\\internal\\pools\\ReservePool.sol": {
+      "lastModificationDate": 1656904196019,
+      "contentHash": "1087116f5834e2047adad528fdf4c8ca",
+      "sourceName": "contracts/markets/internal/pools/ReservePool.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/access/Ownable.sol",
+        "../../../PrimaryMarket.sol",
+        "../cdp/VaultManager.sol",
+        "./StableCoinPool.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.7"
+      ],
+      "artifacts": [
+        "ReservePool"
+      ]
+    },
+    "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\tokens\\profitsharingtokens\\IdeaStakingToken.sol": {
+      "lastModificationDate": 1656904438611,
+      "contentHash": "89e0a893f43efcf1b0714b8e6cffabe8",
+      "sourceName": "contracts/tokens/profitsharingtokens/IdeaStakingToken.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.7"
+      ],
+      "artifacts": [
+        "IdeaStakingToken"
+      ]
+    }
+  }
+}
