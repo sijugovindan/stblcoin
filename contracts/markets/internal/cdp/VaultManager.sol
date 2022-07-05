@@ -132,7 +132,7 @@ contract VaultManager is Base, Ownable {
         console.log("Price %s", price);
         
         // mention that this case is more complex,so simplifying, we will just redeem the last one for now.
-        // in reality we would go throught all the troves 
+        // in reality we would go throught all the Vaults 
         // till the amount of IUSD that is redeemed is complete 
         address borrowerToRedeemFrom = sortedVaults.getLast();
         
@@ -262,7 +262,7 @@ contract VaultManager is Base, Ownable {
         );
     }
     
-    // Return the nominal collateral ratio (ICR) of a given Vault, without the price. Takes a trove's pending coll and debt rewards from redistributions into account.
+    // Return the nominal collateral ratio (ICR) of a given Vault, without the price. Takes a Vault's pending coll and debt rewards from redistributions into account.
     function getNominalICR(
         address _borrower
     ) 
