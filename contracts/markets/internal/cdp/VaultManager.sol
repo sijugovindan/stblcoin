@@ -131,8 +131,9 @@ contract VaultManager is Base, Ownable {
         uint256 price = priceFeed.getPrice();
         console.log("Price %s", price);
         
-        // mention that this case in liquity is more complex but for learning purposes we are simplifying, we will just redeem the last one,
-        // also mention that in reality liquity would go throught all the troves till the amount of IUSD that is redeemed is complete 
+        // mention that this case is more complex,so simplifying, we will just redeem the last one for now.
+        // in reality we would go throught all the troves 
+        // till the amount of IUSD that is redeemed is complete 
         address borrowerToRedeemFrom = sortedVaults.getLast();
         
         // Determine the remaining amount (lot) to be redeemed, capped by the entire debt of the Vault minus the liquidation reserve
@@ -173,7 +174,7 @@ contract VaultManager is Base, Ownable {
         uint256 reserveFee = _getRedemptionFee(reserveToRedeem);
         console.log("reserveFee %s", reserveFee);
         
-        // Send the Reserve fee to the LQTY staking contract
+        // Send the Reserve fee to the Idea-staking contract
         reservePool.sendReserve(address(stakingPool), reserveFee);
         stakingPool.increaseReserveFees(reserveFee);
 
@@ -233,7 +234,10 @@ contract VaultManager is Base, Ownable {
     returns (uint) 
     {
         uint redemptionFee = _redemptionRate * _ReserveDrawn / DECIMAL_PRECISION;
-        require(redemptionFee < _ReserveDrawn, "TroveManager: Fee would eat up all returned collateral");
+        require(
+            redemptionFee < _ReserveDrawn, 
+            "VaultManager: Fee would eat up all returned collateral"
+        );
         return redemptionFee;
     }
     
