@@ -86,7 +86,7 @@ contract VaultManager is Base, Ownable {
         console.log("Price %s", price);
         
         // get vault info
-        (uint256 currentReserve, uint256 currentIUSDDebt) = _getCurrentTroveAmounts(_borrower);
+        (uint256 currentReserve, uint256 currentIUSDDebt) = _getCurrentVaultAmounts(_borrower);
         console.log("currentReserve %s", currentReserve);
         console.log("currentIUSDDebt %s", currentIUSDDebt);
 
@@ -262,7 +262,7 @@ contract VaultManager is Base, Ownable {
         );
     }
     
-    // Return the nominal collateral ratio (ICR) of a given Trove, without the price. Takes a trove's pending coll and debt rewards from redistributions into account.
+    // Return the nominal collateral ratio (ICR) of a given Vault, without the price. Takes a trove's pending coll and debt rewards from redistributions into account.
     function getNominalICR(
         address _borrower
     ) 
@@ -270,7 +270,7 @@ contract VaultManager is Base, Ownable {
     view 
     returns (uint) 
     {
-        (uint currentReserve, uint currentIUSDDebt) = _getCurrentTroveAmounts(_borrower);
+        (uint currentReserve, uint currentIUSDDebt) = _getCurrentVaultAmounts(_borrower);
 
         uint NICR = _computeNominalCR(currentReserve, currentIUSDDebt);
         return NICR;
@@ -286,13 +286,13 @@ contract VaultManager is Base, Ownable {
         if (_debt > 0) {
             return _coll * NICR_PRECISION / _debt;
         }
-        // Return the maximal value for uint256 if the Trove has a debt of 0. Represents "infinite" CR.
+        // Return the maximal value for uint256 if the Vault has a debt of 0. Represents "infinite" CR.
         else { // if (_debt == 0)
             return 2**256 - 1;
         }
     }
     
-    function _getCurrentTroveAmounts(
+    function _getCurrentVaultAmounts(
         address _borrower
     ) 
     internal 

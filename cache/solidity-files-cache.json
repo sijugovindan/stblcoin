@@ -195,8 +195,8 @@
       ]
     },
     "C:\\Users\\ADFIN.DESKTOP-6U0JPI0\\Desktop\\stblcoingit\\stblcoin\\contracts\\markets\\internal\\cdp\\VaultManager.sol": {
-      "lastModificationDate": 1656917416280,
-      "contentHash": "7c55e8426cf141082ee8ceb214067f0a",
+      "lastModificationDate": 1657008761043,
+      "contentHash": "433be1235fca0456405412ebb536730f",
       "sourceName": "contracts/markets/internal/cdp/VaultManager.sol",
       "solcConfig": {
         "version": "0.8.10",
